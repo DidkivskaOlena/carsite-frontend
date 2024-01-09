@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import style from "./App.module.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header/Header";
+import { Nav } from "./components/Nav/Nav";
+import { MainContent } from "./components/MainContent/MainContent";
+import { AboutUs } from "./components/AboutUs/AboutUs";
+import {Services} from './components/Services/Services'
+import {CarCatalogue} from './components/CarCatalogue/CarCatalogue'
+import {Favorites} from './components/Favorites/Favorites'
+import {Faq} from './components/FAQ/Faq'
+import {ContactUs} from './components/ContactUs/ContactUs'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <BrowserRouter>
+    <div>
+      <Header />
+      <Nav />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Routes>
+        <Route path="/aboutUs" element={<AboutUs/>}></Route>
+        <Route path='/services' element={<Services/>}></Route>
+        <Route path="/carCatalogue" element={<CarCatalogue/>}></Route>
+        <Route path='/favorites' element={<Favorites/>}></Route>
+        <Route path="/faq" element={<Faq/>}></Route>
+        <Route path='/contactUs' element={<ContactUs/>}></Route>
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <MainContent/>
+    </div>
+     </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,11 @@
+.carImg{
+    float: left;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+.subTitle{
+    text-align: center;
+}
