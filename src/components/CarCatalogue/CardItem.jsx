@@ -5,11 +5,15 @@ import { useState, useEffect } from "react";
 export function CardComponent({ data }) {
   return (
     <div className={style.cards}>
+
+      <div>
+        <a href="#" className={style.favoritesIcon}>
+          <img src={data.primary_photo_url} width = "260"/>
+        </a>
+      </div>
+
       <div className={style.cardHeader}>
         <p className={style.nameCard}>In good hands</p>
-        <a href="#" className={style.favoritesIcon}>
-          <img src="/Vector.svg" />
-        </a>
       </div>
 
       <div className={style.inCard}>
