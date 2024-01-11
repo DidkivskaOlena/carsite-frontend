@@ -7,7 +7,7 @@ import {
 import { HomePage } from "./components/HomePage/HomePage";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Services } from "./components/Services/Services";
-import { CarCatalogue } from "./components/CarCatalogue/CarCatalogue";
+import { CardItem } from "./components/CarCatalogue/CardItem";
 import { Favorites } from "./components/Favorites/Favorites";
 import { Faq } from "./components/FAQ/Faq";
 import { ContactUs } from "./components/ContactUs/ContactUs";
@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/" element={<HomePage />}></Route>
             <Route path="/aboutUs" element={<AboutUs />}></Route>
             <Route path="/services" element={<Services />}></Route>
-            <Route path="/carCatalogue" element={<CarCatalogue />}></Route>
+            <Route path="/carCatalogue" element={<CardItem />}></Route>
             <Route path="/favorites" element={<Favorites />}></Route>
             <Route path="/faq" element={<Faq />}></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>

@@ -1,0 +1,90 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+.cards {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #b3b3b3;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardHeader p {
+    text-decoration: none;
+   
+    background-color: rgba(255, 255, 255, 0.6);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px 10px 10px 0px
+}
+.cardHeader a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+ 
+}
+.favoritesIcon {
+  font-size: 20px;
+}
+
+.desc {
+  margin-right: 100px;
+}
+.cardDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.inCard h1 {
+  text-align: center;
+}
+
+.cardBtn {
+  border: solid rgb(0, 0, 0) 1px;
+  color: rgb(100, 100, 100);
+  width: 100%;
+  border-radius: 20px;
+  padding: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  position: relative;
+  transition: background-color 0.6s ease;
+  overflow: hidden;
+}
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background: rgb(46, 46, 46)
+    radial-gradient(circle, transparent 1%, rgb(78, 78, 78) 1%)
+    center/15000%;
+}
+.ripple:active {
+  cursor: pointer;
+  color: #ffffff;
+  background-size: 100%;
+  transition: background 0s;
+}
