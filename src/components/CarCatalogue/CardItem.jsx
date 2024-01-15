@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import style from "./CardItem.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
