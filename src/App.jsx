@@ -21,7 +21,7 @@ function App() {
         <hr color="grey" />
         <div>
           <Routes>
-            <Route exact path="/" element={<HomePage />}></Route>
+            <Route index path="/" element={<HomePage />}></Route>
             <Route path="/aboutUs" element={<AboutUs />}></Route>
             <Route path="/services" element={<Services />}></Route>
             <Route path="/carCatalogue" element={<CardItem />}></Route>
