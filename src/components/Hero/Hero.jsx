@@ -1,13 +1,13 @@
-import style from "./HomePage.module.css";
+import style from "./Hero.module.css";
 
-export function HomePage() {
+const Hero = () => {
   return (
     <div className={style.container}>
       <div className={style.logoImg}>
         <img
-          src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-car-silhouette-png-image_6856896.png"
-          width={"300px"}
-          height={"250px"}
+          src="maincar.png"
+          width={"1021px"}
+          height={"386px"}
         ></img>
       </div>
       <div className={style.mainText}>
@@ -23,3 +23,5 @@ export function HomePage() {
     </div>
   );
 }
+
+export default Hero;

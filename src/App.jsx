@@ -4,34 +4,36 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import { HomePage } from "./components/HomePage/HomePage";
-import { AboutUs } from "./components/AboutUs/AboutUs";
-import { Services } from "./components/Services/Services";
-import { CardItem } from "./components/CarCatalogue/CardItem";
-import { Favorites } from "./components/Favorites/Favorites";
-import { Faq } from "./components/FAQ/Faq";
-import { ContactUs } from "./components/ContactUs/ContactUs";
-import {Header} from './components/Header/Header'
+import { Suspense, lazy } from "react";
+import { SharedLayout } from "./components/SharedLayout";
+
+
+
+const Home = lazy(() => import("./pages/Home/Home"))
+const About = lazy(() => import("./pages/About/About"))
+const Services = lazy(() => import("./pages/Services/ServicePage"))
+const Catalogue = lazy(()=> import("./pages/Catalog/CatalogPage"))
+const Favorites = lazy(()=> import("./pages/Favorites/FavoritesPage"))
+const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
+const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-       <Header/>
-        <hr color="grey" />
-        <div>
+        <BrowserRouter>
+          <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route index path="/" element={<HomePage />}></Route>
-            <Route path="/aboutUs" element={<AboutUs />}></Route>
-            <Route path="/services" element={<Services />}></Route>
-            <Route path="/carCatalogue" element={<CardItem />}></Route>
-            <Route path="/favorites" element={<Favorites />}></Route>
-            <Route path="/faq" element={<Faq />}></Route>
-            <Route path="/contactUs" element={<ContactUs />}></Route>
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+            <Route path="/" element={<SharedLayout/>}>
+              <Route index element={<Home />}/>
+              <Route path="/about" element={<About />} />
+              <Route path="/catalogue" element={<Catalogue/>}/>
+              <Route path="/services" element={<Services />} />
+              <Route path="/favorites" element={<Favorites/>}/>
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contacts" element={<Contacts/>}/>
+            </Route>
+        </Routes>
+          </Suspense>
+        </BrowserRouter>
   );
 }
 
