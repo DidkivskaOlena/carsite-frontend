@@ -1,18 +1,19 @@
-import style from "./Hero.module.css";
+import { HeroContainer, HeroContentContainer } from "./HeroCompStyle";
 
 const Hero = () => {
   return (
-    <div className={style.container}>
-      <div className={style.logoImg}>
+    <HeroContainer >
+      <HeroContentContainer>
+      <div >
         <img
           src="maincar.png"
           width={"1021px"}
           height={"386px"}
         ></img>
       </div>
-      <div className={style.mainText}>
+      <div >
         <h1>Slogan slogan slogan</h1>
-        <p className={style.subTitle}>
+        <p >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/>Fugiat
           incidunt magni blanditiis ullam, iusto beatae nulla explicabo dolore.
           <br />
@@ -20,7 +21,8 @@ const Hero = () => {
           voluptate, similique ipsa soluta.
         </p>
       </div>
-    </div>
+      </HeroContentContainer>
+    </HeroContainer>
   );
 }
 

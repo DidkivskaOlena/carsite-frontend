@@ -1,26 +1,34 @@
 import { Link, NavLink } from "react-router-dom";
-import style from "./NavBar.module.css"
+import { Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+
+const links = [
+  { path: "/about", label: "About us", exact: "false" },
+  { path: "/services", label: "Services", exact: "false" },
+  { path: "/catalogue", label: "Car catalogue", exact: "false" },
+  { path: "/favorites", label: "Favorites", exact: "false" },
+  { path: "/faq", label: "FAQ", exact: "false" },
+  { path: "/contacts", label: "Contact us", exact: "false" },
+];
 
 function NavBar() {
     return(
-        <div>
-      <NavLink to="/">
-        <img
-          src="https://cdn-icons-png.flaticon.com/256/21/21270.png"
-          width={"50px"}
-          height={"50px"}
-          
-        />
-      </NavLink>
-      <nav className={style.header}>
-        <Link to="/about">About us</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/catalogue">Car catalogue</Link>
-        <Link to="/favorites">Favorites</Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/contacts">Contact us</Link>
-      </nav>
-    </div>
+      <NavbarContainer>
+        <LogoContainer to="/">
+          <Logo src="/logo1.png"/>
+          <Logo src="/logo.png"/>
+        </LogoContainer>
+      <MenuContainer >
+        {links.map(({path, label, exact}) => (
+          <NavbarLink 
+            key={label}
+            to={path}
+            exact={exact}>
+            {label}
+          </NavbarLink>
+        ))}
+      </MenuContainer>
+    
+      </NavbarContainer>
     )
 }
 
