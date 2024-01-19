@@ -1,5 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
-import { Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+import {  NavLink } from "react-router-dom";
+import { LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+
 
 const links = [
   { path: "/about", label: "About us", exact: "false" },
@@ -27,7 +28,9 @@ function NavBar() {
           </NavbarLink>
         ))}
       </MenuContainer>
-    
+      <LoginButtonStyled component={NavLink} to="/login">
+              Login
+      </LoginButtonStyled>
       </NavbarContainer>
     )
 }

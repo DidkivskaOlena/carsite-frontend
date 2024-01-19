@@ -42,15 +42,6 @@ export const MenuContainer = styled.div`
   align-items: center;
 `;
 
-// .header_links{
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-around;
-//     margin: 60px;
-//     width: 1100px;
-
-// }
-
 export const NavbarLink = styled(NavLink)`
   color: #000000;
   font-weight: 500;
@@ -81,8 +72,58 @@ export const NavbarLink = styled(NavLink)`
   }
 `;
 
-// .link{
-//     font-size: 24px;
-//     text-decoration: none;
-//     color: #000;
-// }
+export const AuthContainer = styled.div`
+  display: flex;
+  margin-left: auto;
+  align-items: flex-start;
+  margin-right: 0px;
+
+  @media (max-width: 968px) {
+    margin-right: 20px;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const AuthButtonStyled = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  background: #DDFF00;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #D0B28F;
+  text-decoration: none;
+  height: 47px;
+  padding-left: 28px;
+  padding-right: 28px;
+
+  cursor: pointer;
+  transition: all 250ms;
+  &:hover {
+    background: #DDFF00;
+  }
+  &:before {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+  }
+`;
+
+export const LoginButtonStyled = styled(NavLink)`
+  display: flex;
+  background: #DDFF00;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #D0B28F;
+  text-decoration: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 250ms;
+  &:hover {
+    background: #DDFF00;
+  }
+`;

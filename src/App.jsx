@@ -6,6 +6,9 @@ import {
 } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { SharedLayout } from "./components/SharedLayout";
+import { PrivateRoute } from "./PrivateRoute";
+import { RestrictedRoute } from "./RestrictedRoute";
+import AdminPage from "./pages/Admin/AdminPage";
 
 
 
@@ -16,6 +19,7 @@ const Catalogue = lazy(()=> import("./pages/Catalog/CatalogPage"))
 const Favorites = lazy(()=> import("./pages/Favorites/FavoritesPage"))
 const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
+const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 
 function App() {
   return (
@@ -30,6 +34,10 @@ function App() {
               <Route path="/favorites" element={<Favorites/>}/>
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
+              <Route path="/login" element={<LoginPage/>}/>
+              <Route path="/admin" element={
+                <PrivateRoute redirectTo="/login" component={<AdminPage/>}/>
+              }/>
             </Route>
         </Routes>
           </Suspense>
