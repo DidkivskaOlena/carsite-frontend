@@ -1,5 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
-import { Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+import {  NavLink } from "react-router-dom";
+import { LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+import { useContext } from "react";
+import authContext from "../../context/auth/context"
 
 const links = [
   { path: "/about", label: "About us", exact: "false" },
@@ -11,6 +13,8 @@ const links = [
 ];
 
 function NavBar() {
+  const {isLoggedIn, user, onLogIn, onLogOut} = useContext(authContext)
+
     return(
       <NavbarContainer>
         <LogoContainer to="/">
@@ -27,7 +31,14 @@ function NavBar() {
           </NavbarLink>
         ))}
       </MenuContainer>
-    
+      {isLoggedIn? (
+        <LoginButtonStyled component={NavLink} to = "/admin" user={user} onLogOut={onLogOut}>ADMIN</LoginButtonStyled>
+      ) : (
+        <LoginButtonStyled component={NavLink} to="/login" onClick={onLogIn}>
+            Login
+        </LoginButtonStyled>
+      )}
+      
       </NavbarContainer>
     )
 }

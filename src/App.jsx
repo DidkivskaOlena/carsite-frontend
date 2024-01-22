@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { SharedLayout } from "./components/SharedLayout";
+import AdminPage from "./pages/Admin/AdminPage";
 
 
 
@@ -13,9 +14,11 @@ const Home = lazy(() => import("./pages/Home/Home"))
 const About = lazy(() => import("./pages/About/About"))
 const Services = lazy(() => import("./pages/Services/ServicePage"))
 const Catalogue = lazy(()=> import("./pages/Catalog/CatalogPage"))
+const CarDetails = lazy(()=> import("./pages/CarDetails/CarDetails"))
 const Favorites = lazy(()=> import("./pages/Favorites/FavoritesPage"))
 const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
+const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 
 function App() {
   return (
@@ -26,10 +29,15 @@ function App() {
               <Route index element={<Home />}/>
               <Route path="/about" element={<About />} />
               <Route path="/catalogue" element={<Catalogue/>}/>
+              <Route path="/catalogue/:carId" element={<CarDetails/>}/>
               <Route path="/services" element={<Services />} />
               <Route path="/favorites" element={<Favorites/>}/>
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
+              <Route path="/login" element={<LoginPage/>}/>
+              <Route path="/admin" element={
+                <Route redirectTo="/login" component={<AdminPage/>}/>
+              }/>
             </Route>
         </Routes>
           </Suspense>
