@@ -26,11 +26,12 @@ function Copyright(props) {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-export default function SignIn() {
+// eslint-disable-next-line react/prop-types
+export default function SignIn({onClick}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    onClick({
       email: data.get('email'),
       password: data.get('password'),
     });
