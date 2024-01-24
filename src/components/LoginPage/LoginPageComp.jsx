@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import defaultTheme from '../../styles/theme';
+// import { useState } from 'react';
+import { logIn } from '../../api';
 
 function Copyright(props) {
   return (
@@ -27,14 +29,25 @@ function Copyright(props) {
 // TODO remove, this demo shouldn't need to reset the theme.
 
 // eslint-disable-next-line react/prop-types
-export default function SignIn({onClick}) {
-  const handleSubmit = (event) => {
+export default function SignIn() {
+
+  // const [isLogin, setIsLogin] = useState(false)
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    onClick({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const controller = new AbortController();
+    try {
+      const response = await logIn({
+        email: data.get('email'),
+        password: data.get('password'),
+      }, controller.signal);
+      console.log("response", response);
+      
+    } catch (error) {
+      console.log(error);
+    }
+    
   };
 
   return (

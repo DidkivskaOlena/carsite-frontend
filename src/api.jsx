@@ -31,26 +31,39 @@ export const getCarDetails = async (carId, signal) => {
 };
 
 
-// export const addCar = createAsyncThunk(
-//   'contacts/addContact',
-//   async ({ name, number }, thunkAPI) => {
-//     try {
-//       const response = await axios.post('/contacts', { name, number });
-//       return response.data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );
+export const logIn = async ({ email, password }, signal) => {
+    try {
+      const response = await axios.post('/api/auth/login', { email, password }, {signal});
+      return response.data;
+    } catch (e) {
+      if (axios.isCancel){
+        return []
+      }
+      throw new Error(e)
+    }
+  }
 
-// export const deleteCar = createAsyncThunk(
-//   'contacts/deleteContact',
-//   async (id, thunkAPI) => {
-//     try {
-//       const response = await axios.delete(`/contacts/${id}`);
-//       return response.data;
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );
+
+export const addCar = async (body, signal) => {
+    try {
+      const response = await axios.post('/api/cars', body, {signal});
+      return response.data;
+    } catch (e) {
+      if (axios.isCancel){
+        return []
+      }
+      throw new Error(e)
+    }
+  }
+
+export const deleteCar = async (id, signal) => {
+    try {
+      const response = await axios.delete(`/api/cars/${id}`, {signal});
+      return response.data;
+    } catch (e) {
+      if (axios.isCancel){
+        return []
+      }
+      throw new Error(e)
+    }
+  }
