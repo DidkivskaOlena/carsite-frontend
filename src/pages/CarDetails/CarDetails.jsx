@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getCarDetails } from "../../api";
 
 const CarDetails = () => {
-  const [car, setCar] = useState([]);
+  const [car, setCar] = useState({});
   const [photo, setPhoto] = useState([])
 
   const {carId} = useParams();
 
-  const location = useLocation();
-  const fromLocationRef = location.state?.from;
-  const backLinkHref = location.state?.from ?? '/catalogue/';
+  // const location = useLocation();
+  // console.log(location);
+  // const fromLocationRef = location.state?.from;
+  // const backLinkHref = location.state?.from ?? '/catalogue/';
 
   useEffect(() => {
     const controller = new AbortController();
     const fetchData = async () => {
       try {
         const response = await getCarDetails(carId, controller.signal);
+        console.log("response", response.result.model);
         setCar(response.result);
         setPhoto(response.result.photo_urls)
+        
       } catch (error) {
         console.log(error);
       }
@@ -32,7 +35,7 @@ const CarDetails = () => {
 
   return (
     <main>
-        <Link to={fromLocationRef}>Go back</Link>
+        <Link to={"/catalogue"}>Go back</Link>
         <div>Car Details</div>
 
       <div>
@@ -45,8 +48,8 @@ const CarDetails = () => {
         </div>
 
         <div>
-          <h2> {} </h2>
-          {/* <p>Price: {car.price}</p>
+          <h2> {car.make} {car.model} </h2>
+          <p>Price: {car.price}</p>
           <section>
             <h3>Characteristics</h3>
             <p>Condition: {car.condition}</p>
@@ -56,24 +59,9 @@ const CarDetails = () => {
             <p>Gearbox: {car.gearbox}</p>
             <p>Location:{car.location} </p>
             <p>Year: {car.year}</p>
-          </section> */}
+          </section>
         </div>
       </div>
-
-      {/* <AddInfo>
-        <h4>Additional information</h4>
-        <LinkWrapper>
-          <NavLinkStyled to="cast" state={{ from: backLinkHref }}>
-            Cast
-          </NavLinkStyled>
-          <NavLinkStyled to="Reviews" state={{ from: backLinkHref }}>
-            Reviews
-          </NavLinkStyled>
-        </LinkWrapper>
-      </AddInfo> */}
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense> */}
     </main>
   );
 };
