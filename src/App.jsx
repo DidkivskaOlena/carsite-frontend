@@ -35,14 +35,12 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
               <Route path="/login" element={<LoginPage/>}/>
-              <Route path="/admin" element={
-                <Route redirectTo="/login" component={<AdminPage/>}/>
-              }/>
+              <Route path="/admin" element={<AdminPage/>}/>
             </Route>
         </Routes>
           </Suspense>
         </BrowserRouter>
-  );
+  )
 }
 
 export default App;
