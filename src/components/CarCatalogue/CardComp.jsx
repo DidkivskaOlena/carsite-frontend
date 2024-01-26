@@ -15,6 +15,8 @@ export function CardComponent() {
     return (
       <div>
         <div>
+        {isLoading && <p>Loading ... </p>}
+        {error && <p>{error}</p>}
           {cars?.map((card) => (
             <CardItem key={card._id} data={card} />
           ))}

@@ -1,6 +1,8 @@
 import {  NavLink } from "react-router-dom";
 import { LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
-
+import { useAuth } from "../../hooks/useAuth";
+import { useDispatch } from "react-redux";
+import { logOut } from "../../redux/auth/operations";
 
 const links = [
   { path: "/about", label: "About us", exact: "false" },
@@ -12,7 +14,8 @@ const links = [
 ];
 
 function NavBar() {
-  
+    const {isLoggedIn} = useAuth()
+    const dispatch = useDispatch()
 
     return(
       <NavbarContainer>
@@ -30,15 +33,19 @@ function NavBar() {
           </NavbarLink>
         ))}
       </MenuContainer>
-      
-        <LoginButtonStyled component={NavLink} to="/login">
-            Login
-        </LoginButtonStyled>
-
-        <LoginButtonStyled component={NavLink} to="/admin">
+      {isLoggedIn? (
+        <div>
+          <LoginButtonStyled component={NavLink} to="/admin">
             Admin
         </LoginButtonStyled>
-      
+        <p>Welcome, ADMIN</p>
+        <button type="button" onClick={() => dispatch(logOut())}>
+          Logout
+        </button>
+      </div>
+      ) : (<LoginButtonStyled component={NavLink} to="/login">
+            Login
+        </LoginButtonStyled>) }
       </NavbarContainer>
     )
 }

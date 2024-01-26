@@ -5,7 +5,7 @@ import { deleteCar } from "../../redux/cars/operations";
 /* eslint-disable react/prop-types */
 export function CardItem({ data }) {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteCar(data.id));
+  const handleDelete = () => dispatch(deleteCar(data._id));
 
   return (
     <NavLink to={`/catalogue/${data.id}`}>

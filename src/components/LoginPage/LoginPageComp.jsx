@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import defaultTheme from '../../styles/theme';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/auth/operations';
 
 function Copyright(props) {
   return (
@@ -27,14 +29,19 @@ function Copyright(props) {
 // TODO remove, this demo shouldn't need to reset the theme.
 
 // eslint-disable-next-line react/prop-types
-export default function SignIn({onClick}) {
+export default function SignIn() {
+  const dispatch = useDispatch();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    onClick({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    dispatch(
+      logIn({
+        email: data.get('email'),
+        password: data.get('password'),
+      })
+    );
   };
 
   return (

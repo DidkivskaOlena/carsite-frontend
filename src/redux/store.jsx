@@ -11,17 +11,17 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { carsReducer } from "./cars/carsSlice";
+import { authReducer } from "./auth/slice";
 
-// const authPersistConfig = {
-//   key: "auth",
-//   key: "user",
-//   storage,
-//   whitelist: ["token"],
-// };
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+};
 
 export const store = configureStore({
   reducer: {
-    // auth: persistReducer(authPersistConfig, authReducer),
+    auth: persistReducer(authPersistConfig, authReducer),
     cars: carsReducer
   },
   middleware: (getDefaultMiddleware) =>
