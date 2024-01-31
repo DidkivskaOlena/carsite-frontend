@@ -19,7 +19,7 @@ export const fetchCars = createAsyncThunk(
 
 export const addNewCar = createAsyncThunk(
   "cars/addNewCar",
-  async (newCar, file, thunkAPI) => {
+  async (newCar, thunkAPI) => {
     try {
       const res = await axios.post("/api/cars", newCar, {
         headers: { "Content-Type": "multipart/form-data" },

@@ -1,18 +1,41 @@
 import { Box, Button, FormControl, Input, TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addNewCar } from "../../redux/cars/operations";
-import { useDropzone } from "react-dropzone";
 import { useState } from "react";
-import { nanoid } from "@reduxjs/toolkit";
 
 export const CarForm = () => {
-  const [file, setFile] = useState("");
+    const [photo, setPhoto] = useState([]);
     const dispatch = useDispatch()
+
+    const handlePhotoChange = (e) => {
+      const reader = new FileReader()
+      if (e.target.files[0].size > 5242880) {
+        console.log("Image size bigger than 5MB");
+        return;
+      }
+      if (e.target.files[0]) {
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onloadend = () => {
+          const image = reader.result;
+          if (
+            image.includes("image/png") ||
+            image.includes("image/jpg") ||
+            image.includes("image/jpeg")
+          ) {
+            setPhoto(image);
+            const file = new FormData();
+            file.append("photo", e.target.files[0])
+            console.log(file);
+          }
+        };
+      }
+    }
 
     const handleSubmit = (event) => {
       event.preventDefault();
       
       const data = new FormData(event.currentTarget);
+       
       const body = {
         make: data.get('make'),
         model: data.get('model'),
@@ -25,7 +48,7 @@ export const CarForm = () => {
         location: data.get('location'),
         price: data.get('price'),
         year: data.get('year'),
-        photo: data.append("photo", file)
+        photo: photo
       }
 
       console.log(body)
@@ -36,29 +59,7 @@ export const CarForm = () => {
       // form.reset();
     };
 
-    const [image, setImage] = useState([]);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-      maxFiles: 10,
-      accept: {
-        "image/*": [".png", ".jpg"],
-      },
-      onDrop: (acceptedFiles) => {
-        if (acceptedFiles.size > 5242880) {
-          console.log("Image size bigger than 5MB");
-          return;
-        }
-        setImage(
-          acceptedFiles.map((upFile,) =>
-            Object.assign(upFile.path, {
-              preview: URL.createObjectURL(upFile),
-            })
-          )
-        );
-  
-        setFile(acceptedFiles);
-      },
-    });
-  
+    
     return (
       <FormControl component="form" enctype='multipart/form-data' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -164,29 +165,14 @@ export const CarForm = () => {
               type="year"
               id="year"
             />
-            <Box {...getRootProps()}>
-                  <input
-                    {...getInputProps()}
-                    name="photo"
-                  />
-                  <Button>
-                    {isDragActive ? null : (
-                      <>
-                        <span>Click or Drop file</span>
-                      </>
-                    )}
-                  </Button>
-                  <div key={nanoid}>
-                    {image.map((upFile) => {
-                      return (
-                        <div key={upFile.path}>
-                          <img src={upFile.preview} alt="car-image" />
-                        </div>
-                      );
-                    })}
-                  </div>
-                  {/* {!file && <p>Image required</p>} */}
-                </Box>
+            <form>
+              <Input
+                name="photo"
+                type="file"
+                id="photo"
+                accept="image/jpg, image/jpeg"
+                onChange={handlePhotoChange}/>
+            </form>
             <Button
               type="submit"
               fullWidth
