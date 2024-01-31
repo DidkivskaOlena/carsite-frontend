@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-// axios.defaults.baseURL = 'https://carsite-backend.onrender.com';
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://carsite-backend.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:8000';
 
 export const fetchCars = createAsyncThunk(
   "cars/fetchAll",

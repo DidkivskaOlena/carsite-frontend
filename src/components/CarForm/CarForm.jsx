@@ -1,35 +1,46 @@
 import { Box, Button, FormControl, Input, TextField } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { addNewCar } from "../../redux/cars/operations";
+import CloudinaryUploadWidget from "../../CloudinaryUploadWidget";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 import { useState } from "react";
 
-export const CarForm = () => {
-    const [photo, setPhoto] = useState([]);
-    const dispatch = useDispatch()
+// const cloudConfig = new CloudConfig({cloudName: 'doinkhfhu'})
+// const urlConfig = new URLConfig({secure: true})
+// // const cld = new Cloudinary({cloud: {cloudName: 'doinkhfhu'}});
+// const myImage = new CloudinaryImage("cars/project4_2x_wpesad", cloudConfig, urlConfig)
 
-    const handlePhotoChange = (e) => {
-      const reader = new FileReader()
-      if (e.target.files[0].size > 5242880) {
-        console.log("Image size bigger than 5MB");
-        return;
-      }
-      if (e.target.files[0]) {
-        reader.readAsDataURL(e.target.files[0]);
-        reader.onloadend = () => {
-          const image = reader.result;
-          if (
-            image.includes("image/png") ||
-            image.includes("image/jpg") ||
-            image.includes("image/jpeg")
-          ) {
-            setPhoto(image);
-            const file = new FormData();
-            file.append("photo", e.target.files[0])
-            console.log(file);
-          }
-        };
-      }
+
+
+export const CarForm = () => {
+  const [publicId, setPublicId] = useState("");
+  // Replace with your own cloud name
+  const [cloudName] = useState("doinkhfhu");
+  // Replace with your own upload preset
+  const [uploadPreset] = useState("main-preset");
+
+  const [uwConfig] = useState({
+    cloudName,
+    uploadPreset,
+    // cropping: true, //add a cropping step
+    // showAdvancedOptions: true,  //add advanced options (public_id and tag)
+    // sources: [ "local", "url"], // restrict the upload sources to URL and local files
+    multiple: true,  //restrict upload to a single file
+    // folder: "user_images", //upload files to the specified folder
+    // tags: ["users", "profile"], //add the given tags to the uploaded files
+    // context: {alt: "user_uploaded"}, //add the given context data to the uploaded files
+    // clientAllowedFormats: ["images/jpg", "images/jpeg", "images/png"], //restrict uploading to image files only
+    maxImageFileSize: 2000000,  //restrict file size to less than 2MB
+    maxImageWidth: 2000, //Scales the image down to a width of 2000 pixels before uploading
+    // theme: "purple", //change to a purple theme
+  });
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName
     }
+  });
+
+  const myImage = cld.image(publicId);
 
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -48,15 +59,9 @@ export const CarForm = () => {
         location: data.get('location'),
         price: data.get('price'),
         year: data.get('year'),
-        photo: photo
       }
 
       console.log(body)
-
-      dispatch(addNewCar(body));
-      // const form = event.target;
-      // dispatch(addNewCar(form.elements.text.value))
-      // form.reset();
     };
 
     
@@ -165,14 +170,17 @@ export const CarForm = () => {
               type="year"
               id="year"
             />
-            <form>
-              <Input
-                name="photo"
-                type="file"
-                id="photo"
-                accept="image/jpg, image/jpeg"
-                onChange={handlePhotoChange}/>
-            </form>
+            <div >
+              <h3>Cloudinary Upload Widget Example</h3>
+              <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
+              <div style={{ width: "800px" }}>
+                <AdvancedImage
+                  style={{ maxWidth: "100%" }}
+                  cldImg={myImage}
+                  plugins={[responsive(), placeholder()]}
+                />
+              </div>
+            </div>
             <Button
               type="submit"
               fullWidth
