@@ -1,8 +1,10 @@
 import { Box, Button, FormControl, Input, TextField } from "@mui/material";
-import CloudinaryUploadWidget from "../../CloudinaryUploadWidget";
+import CloudinaryUploadWidget from "../CloudinaryUploadWidget";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNewCar } from "../../redux/cars/operations";
 
 // const cloudConfig = new CloudConfig({cloudName: 'doinkhfhu'})
 // const urlConfig = new URLConfig({secure: true})
@@ -12,7 +14,9 @@ import { useState } from "react";
 
 
 export const CarForm = () => {
+  const dispatch = useDispatch();
   const [publicId, setPublicId] = useState("");
+  const [photo, setPhoto] = useState([])
   // Replace with your own cloud name
   const [cloudName] = useState("doinkhfhu");
   // Replace with your own upload preset
@@ -25,7 +29,7 @@ export const CarForm = () => {
     // showAdvancedOptions: true,  //add advanced options (public_id and tag)
     // sources: [ "local", "url"], // restrict the upload sources to URL and local files
     multiple: true,  //restrict upload to a single file
-    // folder: "user_images", //upload files to the specified folder
+    folder: "cars", //upload files to the specified folder
     // tags: ["users", "profile"], //add the given tags to the uploaded files
     // context: {alt: "user_uploaded"}, //add the given context data to the uploaded files
     // clientAllowedFormats: ["images/jpg", "images/jpeg", "images/png"], //restrict uploading to image files only
@@ -59,137 +63,137 @@ export const CarForm = () => {
         location: data.get('location'),
         price: data.get('price'),
         year: data.get('year'),
+        photo_urls: photo
       }
 
-      console.log(body)
-    };
-
+      dispatch(addNewCar(body))
+    }
     
     return (
-      <FormControl component="form" enctype='multipart/form-data' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="make"
-              label="Make"
-              name="make"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="model"
-              label="Model"
-              type="model"
-              id="model"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="mileage"
-              label="Mileage"
-              name="mileage"
-              autoComplete="mileage"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="condition"
-              label="Condition"
-              name="condition"
-              autoComplete="condition"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="drive_unit"
-              label="Drive unit"
-              type="drive_unit"
-              id="drive_unit"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="engine_capacity"
-              label="Engine capacity"
-              name="engine_capacity"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="fuel_type"
-              label="Fuel type"
-              type="fuel_type"
-              id="fuel_type"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="gearbox"
-              label="Gearbox"
-              name="gearbox"
-              autoComplete="gearbox"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="location"
-              label="Location"
-              type="location"
-              id="location"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="price"
-              label="Price"
-              name="price"
-              autoComplete="price"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="year"
-              label="Year"
-              type="year"
-              id="year"
-            />
-            <div >
-              <h3>Cloudinary Upload Widget Example</h3>
-              <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
-              <div style={{ width: "800px" }}>
-                <AdvancedImage
-                  style={{ maxWidth: "100%" }}
-                  cldImg={myImage}
-                  plugins={[responsive(), placeholder()]}
-                />
-              </div>
+      <div >
+        <h3>Cloudinary Upload Widget Example</h3>
+          <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} setPhoto={setPhoto}/>
+            <div style={{ width: "800px" }}>
+              <AdvancedImage
+                style={{ maxWidth: "100%" }}
+                cldImg={myImage}
+                plugins={[responsive(), placeholder()]}
+              />
             </div>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-          </FormControl>
+            <FormControl component="form" enctype='multipart/form-data' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="make"
+                label="Make"
+                name="make"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="model"
+                label="Model"
+                type="model"
+                id="model"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="mileage"
+                label="Mileage"
+                name="mileage"
+                autoComplete="mileage"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="condition"
+                label="Condition"
+                name="condition"
+                autoComplete="condition"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="drive_unit"
+                label="Drive unit"
+                type="drive_unit"
+                id="drive_unit"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="engine_capacity"
+                label="Engine capacity"
+                name="engine_capacity"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="fuel_type"
+                label="Fuel type"
+                type="fuel_type"
+                id="fuel_type"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="gearbox"
+                label="Gearbox"
+                name="gearbox"
+                autoComplete="gearbox"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="location"
+                label="Location"
+                type="location"
+                id="location"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="price"
+                label="Price"
+                name="price"
+                autoComplete="price"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="year"
+                label="Year"
+                type="year"
+                id="year"
+              />
+              
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+            </FormControl>
+          </div> 
     );
   };
-  
