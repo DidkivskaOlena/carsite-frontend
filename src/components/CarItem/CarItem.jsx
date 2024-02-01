@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { deleteCar } from "../../redux/cars/operations";
 
 /* eslint-disable react/prop-types */
-export function CardComponent({ data }) {
+export function CardItem({ data }) {
+  const dispatch = useDispatch();
+  const handleDelete = () => dispatch(deleteCar(data._id));
+
   return (
-    <NavLink to={`/catalogue/${data._id}`}>
+    <NavLink to={`/catalogue/${data.id}`}>
 
       <div >
         <p >In good hands</p>
@@ -25,6 +30,7 @@ export function CardComponent({ data }) {
         <button>
           Learn more
         </button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </NavLink>
   );

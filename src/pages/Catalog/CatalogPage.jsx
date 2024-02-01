@@ -1,9 +1,9 @@
-import { CardItem } from "../../components/CarCatalogue/CardComp"
+import { CardComponent} from "../../components/CarCatalogue/CardComp"
 
 const CarCatalogue = () => {
     return(
         <>
-            <CardItem/>
+            <CardComponent/>
         </>
     )
 }

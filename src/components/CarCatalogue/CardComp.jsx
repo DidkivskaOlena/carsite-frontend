@@ -1,34 +1,24 @@
-import { useState, useEffect } from "react";
-import { fetchCars } from "../../api";
-import { CardComponent } from "../CarItem/CarItem";
+import { useEffect } from "react";
+import { selectCars } from "../../redux/cars/selectors";
+import { CardItem } from "../CarItem/CarItem";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCars } from "../../redux/cars/operations";
 
-export function CardItem() {
-    const [cardsData, setCardsData] = useState([]);
-  
-    useEffect(() => {
-      const controller = new AbortController()
-      const fetchData = async () => {
-        try {
-          const response = await fetchCars(controller.signal);
-          setCardsData(response)
-        } catch (error) {
-          console.log(error);
-        }
-      }
-
-      fetchData()
-
-      return () => {
-        controller.abort()
-      }
-  
-    }, []);
+export function CardComponent() {
+  const dispatch = useDispatch();
+  const { cars, isLoading, error } = useSelector(selectCars);
+  console.log(cars);
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
   
     return (
       <div>
         <div>
-          {cardsData.map((card) => (
-            <CardComponent key={card._id} data={card} />
+        {isLoading && <p>Loading ... </p>}
+        {error && <p>{error}</p>}
+          {cars?.map((card) => (
+            <CardItem key={card._id} data={card} />
           ))}
         </div>
       </div>

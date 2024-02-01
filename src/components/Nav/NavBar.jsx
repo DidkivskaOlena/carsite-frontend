@@ -1,7 +1,8 @@
 import {  NavLink } from "react-router-dom";
 import { LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
-import { useContext } from "react";
-import authContext from "../../context/auth/context"
+import { useAuth } from "../../hooks/useAuth";
+import { useDispatch } from "react-redux";
+import { logOut } from "../../redux/auth/operations";
 
 const links = [
   { path: "/about", label: "About us", exact: "false" },
@@ -13,7 +14,8 @@ const links = [
 ];
 
 function NavBar() {
-  const {isLoggedIn, user, onLogIn, onLogOut} = useContext(authContext)
+    const {isLoggedIn} = useAuth()
+    const dispatch = useDispatch()
 
     return(
       <NavbarContainer>
@@ -32,13 +34,18 @@ function NavBar() {
         ))}
       </MenuContainer>
       {isLoggedIn? (
-        <LoginButtonStyled component={NavLink} to = "/admin" user={user} onLogOut={onLogOut}>ADMIN</LoginButtonStyled>
-      ) : (
-        <LoginButtonStyled component={NavLink} to="/login" onClick={onLogIn}>
-            Login
+        <div>
+          <LoginButtonStyled component={NavLink} to="/admin">
+            Admin
         </LoginButtonStyled>
-      )}
-      
+        <p>Welcome, ADMIN</p>
+        <button type="button" onClick={() => dispatch(logOut())}>
+          Logout
+        </button>
+      </div>
+      ) : (<LoginButtonStyled component={NavLink} to="/login">
+            Login
+        </LoginButtonStyled>) }
       </NavbarContainer>
     )
 }

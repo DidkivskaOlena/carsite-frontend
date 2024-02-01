@@ -7,6 +7,8 @@ import {
 import { Suspense, lazy } from "react";
 import { SharedLayout } from "./components/SharedLayout";
 import AdminPage from "./pages/Admin/AdminPage";
+import { RestrictedRoute } from "./RestrictedRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 
 
@@ -34,15 +36,17 @@ function App() {
               <Route path="/favorites" element={<Favorites/>}/>
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
-              <Route path="/login" element={<LoginPage/>}/>
+              <Route path="/login" element={
+                <RestrictedRoute redirectTo="/admin" component={<LoginPage/>}/>
+              }/>
               <Route path="/admin" element={
-                <Route redirectTo="/login" component={<AdminPage/>}/>
+                <PrivateRoute redirectTo="/login" component={<AdminPage/>}/>
               }/>
             </Route>
         </Routes>
           </Suspense>
         </BrowserRouter>
-  );
+  )
 }
 
 export default App;
