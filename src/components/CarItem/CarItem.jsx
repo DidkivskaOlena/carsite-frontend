@@ -10,7 +10,7 @@ export function CardItem({ data }) {
   const handleDelete = () => dispatch(deleteCar(data._id));
 
   return (
-    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: 20 }}>
+    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: 2 }}>
         <CardMedia
         component="img"
         height="140"
