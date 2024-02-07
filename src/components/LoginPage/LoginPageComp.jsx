@@ -80,15 +80,12 @@ export default function SignIn() {
       setEmailError(error.errors);
     }
   
-      // dispatch(
-      //     logIn({
-      //       email: data.get('email'),
-      //       password: data.get('password'),
-      //     })
-      // );
-    
-      
-    
+      dispatch(
+          logIn({
+            email: data.get('email'),
+            password: data.get('password'),
+          })
+      );
    
   };
 

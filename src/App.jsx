@@ -1,4 +1,5 @@
-// import style from "./App.module.css";
+import './i18n';
+import { useTranslation, Trans } from 'react-i18next';
 import {
   BrowserRouter,
   Route,
@@ -24,9 +25,10 @@ const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
 
 function App() {
+  const {t} = useTranslation()
   return (
         <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>{t("loading")}</div>}>
           <Routes>
             <Route path="/" element={<SharedLayout/>}>
               <Route index element={<Home />}/>
