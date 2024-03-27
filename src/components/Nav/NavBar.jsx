@@ -77,7 +77,7 @@ function NavBar() {
         </LoginButtonStyled>) } */}
         <LangContainer>
           {Object.keys(lngs).map((lng) => (
-            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#F5F5F5' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#CCC9C3' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
             </LangButton>
           ))}
