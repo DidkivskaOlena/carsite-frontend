@@ -26,7 +26,7 @@ i18n
             catalogue: "Car catalogue",
             favorites: "Favorites",
             faq: "FAQ",
-            contact: "Contact us"
+            contact: "Contact us",
           }
         }
       },

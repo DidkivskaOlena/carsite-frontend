@@ -1,13 +1,16 @@
 import {  NavLink } from "react-router-dom";
-import { LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
 import { useAuth } from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/auth/operations";
 import { useTranslation, Trans } from 'react-i18next';
 
 const lngs = {
-  en: { nativeName: 'English' },
-  ua: { nativeName: 'Українська' }
+  en: { nativeName: 'EN' },
+  ua: { nativeName: 'UA' },
+  ru: { nativeName: 'RU' },
+  de: { nativeName: 'DE' },
+  nl: { nativeName: 'NL' }
 };
 
 function NavBar() {
@@ -17,12 +20,12 @@ function NavBar() {
 
     return(
       <NavbarContainer>
+        <Header>
         <LogoContainer to="/">
-          <Logo src="/logo1.png"/>
-          <Logo src="/logo.png"/>
+          <Logo src="/logo.svg"/>
         </LogoContainer>
       <MenuContainer >
-        <NavbarLink 
+        {/* <NavbarLink 
             key="About us"
             to="/about"
             exact="false">
@@ -57,9 +60,9 @@ function NavBar() {
             to="/contacts"
             exact="false">
             {t(`header.contact`)}
-        </NavbarLink>
+        </NavbarLink> */}
       </MenuContainer>
-      {isLoggedIn? (
+      {/* {isLoggedIn? (
         <div>
           <LoginButtonStyled component={NavLink} to="/admin">
             Admin
@@ -71,14 +74,15 @@ function NavBar() {
       </div>
       ) : (<LoginButtonStyled component={NavLink} to="/login">
             Login
-        </LoginButtonStyled>) }
-        <div>
+        </LoginButtonStyled>) } */}
+        <LangContainer>
           {Object.keys(lngs).map((lng) => (
-            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#F5F5F5' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
-            </button>
+            </LangButton>
           ))}
-        </div>
+        </LangContainer>
+        </Header>
       </NavbarContainer>
     )
 }

@@ -2,11 +2,25 @@ import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
-  padding: 20px 16px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 80px;
-  background-color: #CCC9C3;
+  background-color: #F5F5F5;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    padding: 30px 40px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+  @media (min-width: 1280px) {
+    border-bottom: 1px solid #000000;
+  }
+`;
+
+export const Header = styled.nav`
+  margin-left: 10px;
+  background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
 
@@ -18,29 +32,30 @@ export const NavbarContainer = styled.nav`
 }
 
   @media (min-width: 1280px) {
-    padding: 40px 80px;
-    align-items: center;
-    justify-content: space-around;
+    padding-top: 17px;
+    align-items: end;
+    justify-content: space-between;
     flex-direction: row;
+    width: 50%
   }
 `;
 
 export const LogoContainer = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: baseline;
+  // align-items: baseline;
 `;
 
 export const Logo = styled.img`
-  width: 250px;
-  height: 50px;
+  width: 235px;
+  height: 75px;
 `;
 
 export const MenuContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  // display: flex;
+  // justify-content: flex-end;
+  // align-items: baseline;
 `;
 
 export const NavbarLink = styled(NavLink)`
@@ -128,3 +143,16 @@ export const LoginButtonStyled = styled(NavLink)`
     background: #DDFF00;
   }
 `;
+
+export const LangContainer = styled.div`
+  margin-bottom: 5px;
+`
+
+export const LangButton = styled.button`
+  font-size: 20px;
+  color: #000000;
+  margin-right: 25px;
+  border-radius: 50%;
+  border: none;
+  height: 35px;
+`
