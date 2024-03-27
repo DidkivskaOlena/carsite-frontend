@@ -9,7 +9,6 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
-import defaultTheme from '../../styles/theme';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
 import * as Yup from "yup";
@@ -90,7 +89,7 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider >
       <Container component="main" maxWidth="xs">
         <CssBaseline/>
         <Box
