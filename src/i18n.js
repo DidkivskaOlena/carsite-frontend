@@ -20,26 +20,55 @@ i18n
       en: {
         translation: {
           loading: "Loading...",
-          header: {
-            about: "About us",
-            services: "Services",
-            catalogue: "Car catalogue",
-            favorites: "Favorites",
+          menu: {
+            services: "SERVICES & PRICE LIST",
+            catalogue: "CAR CATALOGUE",
             faq: "FAQ",
-            contact: "Contact us",
+            contact: "CONTACT US",
           }
         }
       },
       ua: {
         translation: {
           loading: "Завантаження...",
-          header: {
-            about: "Про нас",
-            services: "Послуги",
-            catalogue: "Каталог машин",
-            favorites: "Вибране",
-            faq: "Питання",
-            contact: "Контакти"
+          menu: {
+            services: "ПОСЛУГИ ТА ПРАЙС-ЛИСТ",
+            catalogue: "КАТАЛОГ АВТО",
+            faq: "FAQ",
+            contact: "КОНТАКТИ"
+          }
+        }
+      },
+      ru: {
+        translation: {
+          loading: "Загрузка...",
+          menu: {
+            services: "УСЛУГИ И ПРАЙС-ЛИСТ",
+            catalogue: "КАТАЛОГ АВТОМОБИЛЕЙ",
+            faq: "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ",
+            contact: "КОНТАКТЫ",
+          }
+        }
+      },
+      de: {
+        translation: {
+          loading: "Herunterladen...",
+          menu: {
+            services: "DIENSTLEISTUNGEN & PREISLISTE",
+            catalogue: "AUTOKATALOG",
+            faq: "FAQ",
+            contact: "KONTAKTIERE UNS"
+          }
+        }
+      },
+      nl: {
+        translation: {
+          loading: "Downloaden...",
+          menu: {
+            services: "DIENSTEN & PRIJSLIJST",
+            catalogue: "AUTO CATALOGUS",
+            faq: "FAQ",
+            contact: "CONTACTEN"
           }
         }
       }

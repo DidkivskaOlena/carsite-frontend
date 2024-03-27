@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 
 export const NavbarContainer = styled.nav`
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #CCC9C3;
 
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -19,7 +19,6 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const Header = styled.nav`
-  margin-left: 10px;
   background-color: #CCC9C3;
   display: flex;
   flex-direction: column;
@@ -50,42 +49,6 @@ export const LogoContainer = styled(Link)`
 export const Logo = styled.img`
   width: 235px;
   height: 75px;
-`;
-
-export const MenuContainer = styled.div`
-  // display: flex;
-  // justify-content: flex-end;
-  // align-items: baseline;
-`;
-
-export const NavbarLink = styled(NavLink)`
-  color: #000000;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 17px;
-  text-decoration: none;
-  margin-left: 30px;
-  transition: all 250ms;
-  &.active {
-    color: #DDFF00;
-    text-decoration: underline;
-  }
-
-  @media (max-width: 968px) {
-    display: none;
-  }
-
-  @media (min-width: 1405px) {
-    margin-left: 60px;
-    font-size: 24px;
-    line-height: 27px;
-  }
-
-  &:hover,
-  :focus {
-    color: #DDFF00;
-    text-decoration: underline;
-  }
 `;
 
 export const AuthContainer = styled.div`
