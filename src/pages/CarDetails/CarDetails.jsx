@@ -1,14 +1,25 @@
-import { useSelector } from "react-redux";
-import { Link, useLocation} from "react-router-dom";
-import { selectCars } from "../../redux/cars/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useParams} from "react-router-dom";
+import { selectCars} from "../../redux/cars/selectors";
+import { fetchCarById } from "../../redux/cars/operations";
+import { useEffect } from "react";
 
 
 const CarDetails = () => {
-  const cars = useSelector(selectCars)
+  const { carId } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCarById(carId))
+  }, [carId, dispatch]);
+
+  const {cars} = useSelector(selectCars);
+  const photo = cars.result.photo_urls
 
   const location = useLocation();
   const fromLocationRef = location.state?.from;
-  const backLinkHref = location.state?.from ?? '/catalogue/';
+
+  
 
   return (
     <main>
@@ -16,26 +27,26 @@ const CarDetails = () => {
         <div>Car Details</div>
 
       <div>
-        {/* <div>
+        <div>
             {photo.map((image)=> {
                 return (
                     <img key={image} src = {image} alt=""/>
                 )
             })}
-        </div> */}
+        </div>
 
         <div>
           <h2> {} </h2>
-          <p>Price: {cars.price}</p>
+          <p>Price: {cars.result.price}</p>
           <section>
             <h3>Characteristics</h3>
-            <p>Condition: {cars.condition}</p>
-            <p>Drive unit: {cars.drive_unit}</p>
-            <p>Engine capacity:{cars.engine_capacity} </p>
-            <p>Fuel type: {cars.fuel_type}</p>
-            <p>Gearbox: {cars.gearbox}</p>
-            <p>Location:{cars.location} </p>
-            <p>Year: {cars.year}</p>
+            <p>Condition: {cars.result.condition}</p>
+            <p>Drive unit: {cars.result.drive_unit}</p>
+            <p>Engine capacity:{cars.result.engine_capacity} </p>
+            <p>Fuel type: {cars.result.fuel_type}</p>
+            <p>Gearbox: {cars.result.gearbox}</p>
+            <p>Location:{cars.result.location} </p>
+            <p>Year: {cars.result.year}</p>
           </section>
         </div>
       </div>

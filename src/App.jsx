@@ -1,4 +1,5 @@
-// import style from "./App.module.css";
+import './i18n';
+import { useTranslation, Trans } from 'react-i18next';
 import {
   BrowserRouter,
   Route,
@@ -21,11 +22,13 @@ const Favorites = lazy(()=> import("./pages/Favorites/FavoritesPage"))
 const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
+const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
 
 function App() {
+  const {t} = useTranslation()
   return (
         <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>{t("loading")}</div>}>
           <Routes>
             <Route path="/" element={<SharedLayout/>}>
               <Route index element={<Home />}/>
@@ -43,6 +46,7 @@ function App() {
                 <PrivateRoute redirectTo="/login" component={<AdminPage/>}/>
               }/>
             </Route>
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
           </Suspense>
         </BrowserRouter>

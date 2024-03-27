@@ -12,6 +12,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import defaultTheme from '../../styles/theme';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
+import * as Yup from "yup";
+import isEmail from "validator/lib/isEmail";
+import { useState } from 'react';
 
 function Copyright(props) {
   return (
@@ -26,22 +29,64 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
+const ValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .max(63, "Must be between 6 and 63 characters.")
+    .min(6, "Must be between 6 and 63 characters.")
+    .email("Invalid email address")
+    .required("Email is required")
+    .test(
+      "is-valid",
+      (message) => `${message.path} is invalid`,
+      (value) =>
+        value ? isEmail(value) : new Yup.ValidationError("Invalid value")
+    ),
+  password: Yup.string()
+    .min(4, "Must be between 7 and 32 characters.")
+    .max(32, "Must be between 7 and 32 characters.")
+    .matches(/^\S*$/, "Password must not contain spaces")
+    .required("Password is required"),
+});
 
 // eslint-disable-next-line react/prop-types
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("")
   const dispatch = useDispatch();
 
+  const handleEmailChange = (event) => {
+    setEmail(event.currentTarget.value);
+  };
 
-  const handleSubmit = (event) => {
+  const handlePasswordChange = (event) => {
+    setPassword(event.currentTarget.value);
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    dispatch(
-      logIn({
-        email: data.get('email'),
-        password: data.get('password'),
-      })
-    );
+    try {
+      await ValidationSchema.validate(
+        {
+          email: data.get('email'),
+          password: data.get('password'),
+        }
+      )
+      console.log("Succes validation");
+    } catch (error) {
+      console.log(error.value);
+      setEmailError(error.errors);
+    }
+  
+      dispatch(
+          logIn({
+            email: data.get('email'),
+            password: data.get('password'),
+          })
+      );
+   
   };
 
   return (
@@ -73,6 +118,10 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={email}
+              onChange={handleEmailChange}
+              error={Boolean(emailError)}
+              helperText={emailError}
             />
             <TextField
               margin="normal"
@@ -83,6 +132,10 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={handlePasswordChange}
+              error={Boolean(passwordError)}
+              helperText={passwordError}
             />
             <Button
               type="submit"
@@ -93,18 +146,6 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
