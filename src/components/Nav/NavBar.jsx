@@ -1,5 +1,5 @@
 import {  NavLink } from "react-router-dom";
-import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, MenuContainer, NavbarContainer, NavbarLink } from "./NavBarCompStyle"
+import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, NavbarContainer } from "./NavBarCompStyle"
 import { useAuth } from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/auth/operations";
@@ -24,44 +24,6 @@ function NavBar() {
         <LogoContainer to="/">
           <Logo src="/logo.svg"/>
         </LogoContainer>
-      <MenuContainer >
-        {/* <NavbarLink 
-            key="About us"
-            to="/about"
-            exact="false">
-            {t(`header.about`)}
-        </NavbarLink>
-        <NavbarLink 
-            key="Services"
-            to="/services"
-            exact="false">
-            {t(`header.services`)}
-        </NavbarLink>
-        <NavbarLink 
-            key="Car catalogue"
-            to="/catalogue"
-            exact="false">
-            {t(`header.catalogue`)}
-        </NavbarLink>
-        <NavbarLink 
-            key="Favorites"
-            to="/favorites"
-            exact="false">
-            {t(`header.favorites`)}
-        </NavbarLink>
-        <NavbarLink 
-            key="FAQ"
-            to="/faq"
-            exact="false">
-            {t(`header.faq`)}
-        </NavbarLink>
-        <NavbarLink 
-            key="Contact us"
-            to="/contacts"
-            exact="false">
-            {t(`header.contact`)}
-        </NavbarLink> */}
-      </MenuContainer>
       {/* {isLoggedIn? (
         <div>
           <LoginButtonStyled component={NavLink} to="/admin">

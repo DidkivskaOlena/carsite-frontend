@@ -20,7 +20,7 @@ html {
 body {
   margin: 0;
   font-family: ${(p) => p.theme.fonts.main};
-  background-color: ${(p) => p.theme.colors.lightGrey};
+  background-color: ${(p) => p.theme.colors.background};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -29,7 +29,7 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background-color: ${(p) => p.theme.colors.lightGrey};
+    background-color: ${(p) => p.theme.colors.background};
     border-radius: ${(p) => p.theme.borders.normal};
   }
 
@@ -77,11 +77,11 @@ img {
   height: auto;
 }
 
-.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
-.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
-.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
-.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
-  color: ${(p) => p.theme.colors.yellow};
-  background-color: ${(p) => p.theme.colors.lightGrey};
-}
+// .Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+// .Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+// .Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
+// .Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
+//   color: ${(p) => p.theme.colors.yellow};
+//   background-color: ${(p) => p.theme.colors.lightGrey};
+// }
 `;
