@@ -1,29 +1,42 @@
 @import-normalize;
+
 @font-face {
-  font-family: "banknuelined";
-  src: url("/fonts/Bank-typeface/banknue-lined-webfont.woff") format("woff");
-  src: url("/fonts/Bank-typeface/banknue-lined-webfont.woff2") format(("woff2"));
+  font-family: 'SA Thousand';
+  src: url('../fonts/SAThousandRegular.eot');
+  src: local('SA Thousand'), local('SAThousandRegular'),
+      url('../fonts/SAThousandRegular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SAThousandRegular.woff2') format('woff2'),
+      url('../fonts/SAThousandRegular.woff') format('woff'),
+      url('../fonts/SAThousandRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "banknuesectioned";
-  src: url("/fonts/Bank-typeface/banknue-sectioned-webfont.woff") format("woff");
-  src: url("/fonts/Bank-typeface/banknue-sectioned-webfont.woff2") format(("woff2"));
+  font-family: 'SA Thousand';
+  src: url('../fonts/SAThousandMedium.eot');
+  src: local('SA Thousand Medium'), local('SAThousandMedium'),
+      url('../fonts/SAThousandMedium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SAThousandMedium.woff2') format('woff2'),
+      url('../fonts/SAThousandMedium.woff') format('woff'),
+      url('../fonts/SAThousandMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "SAThousand-Light";
-  src: url("/fonts/Thousand-Extra-Wide-Sans-Serif/SAThousand-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: "SAThousand-Medium";
-  src: url("/fonts/Thousand-Extra-Wide-Sans-Serif/SAThousand-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "SAThousand";
-  src: url("/fonts/Thousand-Extra-Wide-Sans-Serif/SAThousand.woff") format("woff");
+  font-family: 'SA Thousand';
+  src: url('../fonts/SAThousandLight.eot');
+  src: local('SA Thousand Light'), local('SAThousandLight'),
+      url('../fonts/SAThousandLight.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/SAThousandLight.woff2') format('woff2'),
+      url('../fonts/SAThousandLight.woff') format('woff'),
+      url('../fonts/SAThousandLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {

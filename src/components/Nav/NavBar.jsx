@@ -22,7 +22,7 @@ function NavBar() {
       <NavbarContainer>
         <Header>
         <LogoContainer to="/">
-          <Logo src="/logo.svg"/>
+          <Logo src="/logo.png"/>
         </LogoContainer>
       {/* {isLoggedIn? (
         <div>
@@ -39,7 +39,7 @@ function NavBar() {
         </LoginButtonStyled>) } */}
         <LangContainer>
           {Object.keys(lngs).map((lng) => (
-            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#CCC9C3' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
             </LangButton>
           ))}

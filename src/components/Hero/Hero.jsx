@@ -1,16 +1,25 @@
 import { t } from "i18next";
-import { HeroBox, HeroContainer, MenuBoxCatalogue, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, NavbarLink } from "./HeroCompStyle";
-import { Grid } from "@mui/material";
+import { Grid, GridItem, HeroBox, HeroBoxText, HeroBoxTextSpan, HeroBoxTitle, HeroContainer, ImgCatalogue, MainComment, MainText, MenuBoxCatalogue, MenuBoxCatalogueNav, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, NavbarLink } from "./HeroCompStyle";
+
 
 const Hero = () => {
   return (
     <HeroContainer >
+      <MainText>
+        <img src="automaxgarage.svg"/>
+      </MainText>
+      <MainComment>IS A MODERN AUTOSERVICE WITH A DIVERSE SPECTER OF SERVICES </MainComment>
       <HeroBox>
+        <HeroBoxTitle>DISCO</HeroBoxTitle>
+        <HeroBoxTitle>VER</HeroBoxTitle>
+        <HeroBoxText> OUR</HeroBoxText>
+        <HeroBoxTextSpan> BMV </HeroBoxTextSpan>
+        <HeroBoxText>PROGRAMMING <br/> SERVICES</HeroBoxText>
         {/* <div><img src="/arrow.svg" width={36}/></div> */}
       </HeroBox>
       <MenuContainer >
-        <Grid container spacing={1} alignItems="stretch">
-            <Grid item xs={3}>
+        <Grid container spacing={3} alignItems="stretch">
+            <GridItem item xs={3}>
               <NavbarLink 
                   key="Contact"
                   to="/contacts"
@@ -18,47 +27,53 @@ const Hero = () => {
                     <MenuBoxContact>
                       <MenuText>
                         {t(`menu.contact`)}
-                        <div><img src="/arrow.svg" width={36}/></div>
                       </MenuText>
+                      <div><img src="/arrow.svg" width={36}/></div>
                     </MenuBoxContact>
               </NavbarLink>
-            </Grid>
-            <Grid item xs={3}>
+            </GridItem>
+            <GridItem item xs={3}>
               <NavbarLink 
                   key="FAQ"
                   to="/faq"
                   exact="false">
                   <MenuBoxFaq>
-                    {t(`menu.faq`)}
+                    <MenuText>
+                      {t(`menu.faq`)}
+                    </MenuText>
                     <div><img src="/arrow.svg" width={36}/></div>
                   </MenuBoxFaq>
               </NavbarLink>
-            </Grid>
-            <Grid item xs={3}>
+            </GridItem>
+            <GridItem item xs={3}>
               <NavbarLink 
                   key="Services"
                   to="/services"
                   exact="false">
                   <MenuBoxServices>
-                    {t(`menu.services`)}
+                    <MenuText>
+                      {t(`menu.services`)}
+                    </MenuText>
                     <div><img src="/arrowwhite.svg" width={36}/></div>
                   </MenuBoxServices>
               </NavbarLink>
-            </Grid>
-            <Grid item xs={3}>
+            </GridItem>
+            <GridItem item xs={3}>
               <NavbarLink 
                    key="Car catalogue"
                    to="/catalogue"
-                  exact="false">
+                    exact="false">
                   <MenuBoxCatalogue>
-                  <div><img src="/car.png" width={36}/></div>
-                    <MenuText>
-                      {t(`menu.catalogue`)}
+                    <ImgCatalogue><img src="/photo_2024-03-27_23-19-44-min.png" width={36}/></ImgCatalogue>
+                    <MenuBoxCatalogueNav>
+                      <MenuText>
+                        {t(`menu.catalogue`)}
+                      </MenuText>
                       <div><img src="/arrow.svg" width={36}/></div>
-                    </MenuText>
+                    </MenuBoxCatalogueNav>
                   </MenuBoxCatalogue>
               </NavbarLink>
-            </Grid>
+            </GridItem>
         </Grid>
       </MenuContainer>
     </HeroContainer>
