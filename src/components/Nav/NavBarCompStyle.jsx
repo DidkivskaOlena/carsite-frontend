@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 export const NavbarContainer = styled.nav`
   margin-left: 20px;
   margin-right: 20px;
-  background-color: #CCC9C3;
+  background-color: #F5F5F5;
 
   @media (min-width: 768px) and (max-width: 1279px) {
     padding: 30px 40px;
@@ -19,7 +19,7 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const Header = styled.nav`
-  background-color: #CCC9C3;
+  background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
 

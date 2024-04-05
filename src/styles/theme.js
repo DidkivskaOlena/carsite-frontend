@@ -4,7 +4,7 @@ export const theme = {
     black: "rgba(17, 17, 17, 1)",
     accent: "rgba(245, 146, 86, 1)",
     hover: "rgba(255, 113, 47, 1)",
-    background: "rgba(204, 201, 195, 1)",
+    background: "rgba(245, 245, 245, 1)",
     mainText: "rgba(47, 48, 64, 1)",
     pageTitleText: "rgba(24, 28, 39, 1)",
     searchText: "rgba(83, 83, 83, 1)",
