@@ -8,7 +8,14 @@ export const HeroContainer = styled.div`
     margin-right: 20px;
 `;
 
+export const Main = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+`
+
 export const MainText = styled.div`
+  display: flex;
   width: 30%;
   padding: 24px;
   border: 1px solid #000000;
@@ -16,24 +23,61 @@ export const MainText = styled.div`
   margin-top: 45px;
 `
 
+export const MainTextContent = styled.div`
+  margin-left: 30px;
+  margin-top: 40px;
+  width: 62px;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+`
+
 export const MainComment = styled.p`
   font-size: 20px;
-  margin-top: 35px;
-  margin-left: 24px;
-  width: 580px;
+  margin-top: 20px;
+  margin-left: 155px;
+  margin-bottom: 81px;
+  width: 500px;
   line-height: 1.75;
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 16px;
+    margin-left: 105px;
+    margin-bottom: 61px;
+    width: 400px;
+  }
+`
+
+export const Comment = styled.p`
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  line-height: 1.75;
+  font-family: "Jura", sans-serif;
+  font-weight: 500;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 16px;
+  }
 `
 
 export const HeroBox = styled.div`
-  position: relative;
+  position: absolute;
   padding: 30px;
-  top: -300px;
+  top: 20px;
+  right: 20px;
   height: 67vh;
   left: 50%;
-  width: 50%;
   background: #000000;
   border-radius: 20px;
   border: 1px solid #000000;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    top: 15px;
+    right: 15px;
+  }
 `
 
 export const HeroBoxTitle = styled.p`
@@ -43,6 +87,10 @@ export const HeroBoxTitle = styled.p`
   line-height: 1.2;
   display: inline-block;
   letter-spacing: 0.08em;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 54px;
+  }
 `
 
 export const HeroBoxText = styled.p`
@@ -53,6 +101,10 @@ export const HeroBoxText = styled.p`
   display: inline-block;
   letter-spacing: 0.08em;
   margin-right: 10px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 18px;
+  }
 `
 
 export const HeroBoxTextSpan = styled.p`
@@ -63,6 +115,10 @@ export const HeroBoxTextSpan = styled.p`
   display: inline-block;
   letter-spacing: 0.08em;
   margin-right: 10px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 18px;
+  }
 `
 
 export const MenuContainer = styled.div`
@@ -96,6 +152,10 @@ export const GridItem = styled.li`
     transform: scale(1.02);
     box-shadow: 0px 0.1px 5px 1px #0b2336;
   }
+  
+  @media (min-width: 768px) and (max-width: 1279px) {
+    height: 26vh;
+  }
 `;
 
 export const NavbarLink = styled(NavLink)`
@@ -103,7 +163,39 @@ export const NavbarLink = styled(NavLink)`
   font-size: 20px;
   line-height: 17px;
   text-decoration: none;
+
+  @media (min-width: 768px) and (max-width: 1279px){
+    font-size: 18px;
+  }
 `;
+
+export const MenuBox = styled.div`
+  position: absolute;
+  bottom: 85px;
+  right: 85px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    bottom: 45px;
+    right: 45px;
+  }
+`
+
+export const MenuBoxBorder = styled.div`
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+  animation: loading 5s linear infinite;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    width: 100px;
+    bottom: 14px;
+    right: 14px;
+  }
+`
+
+export const ButtonBox = styled.div`
+  width: 36px
+`
 
 export const MenuBoxContact = styled.div`
   display: flex;
@@ -115,6 +207,11 @@ export const MenuBoxContact = styled.div`
   background: #DDFF00;
   border-radius: 20px;
   border: 1px solid #000000;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    height: 26vh;
+    width: 23vw;
+  }
 `
 export const MenuBoxFaq = styled.div`
 display: flex;
@@ -126,6 +223,11 @@ justify-content: space-between;
   background: #F5F5F5;
   border-radius: 20px;
   border: 1px solid #000000;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    height: 26vh;
+    width: 23vw;
+  }
 `
 export const MenuBoxServices = styled.div`
 display: flex;
@@ -138,18 +240,27 @@ justify-content: space-between;
   border-radius: 20px;
   border: 1px solid #000000;
   color: #FFFFFF;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    height: 26vh;
+    width: 23vw;
+  }
 `
 export const MenuBoxCatalogue = styled.div`
-display: flex;
-flex-direction: column;
-// align-items: flex-end;
-justify-content: flex-end
-height: 27vh;
-width: 24vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end
+  height: 27vh;
+  width: 24vw;
   background: #FFFFFF;
   border-radius: 20px;
   border: 1px solid #FFFFFF;
   padding: 17px 20px;
+
+  @media (min-width: 768px) and (max-width: 1279px){
+    height: 26vh;
+    width: 23vw;
+  }
   
 `
 export const MenuBoxCatalogueNav = styled.div`
@@ -161,30 +272,59 @@ export const MenuBoxCatalogueNav = styled.div`
 export const ImgCatalogue = styled.div`
   margin-top: 50px;
   margin-bottom: 10px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 10px;
+  }
 `
 
 export const MenuText = styled.div`
-  line-height: 36px;
+  line-height: 32px;
   align-items: center;
+  font-family: "Jura", sans-serif;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 11px;
+    line-height: 22px;
+  }
+`
+export const Modal = styled.div`
+    /*  Установаем ширину окна  */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    z-index: 20;
+    transition: .3s all;
+
+    /*  Побочные стили   */
+    text-align: center;
+    padding: 130px 0;
+    transition: 0.3s all;
 `
 
-// .container{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     overflow: hidden;
-//     width: 100%;
-//     height: 100%;
-// }
+export const ModalText = styled.div`
+    font-family: "Jura", sans-serif;
+    font-size: 25px;
+    width: 916px;
+    line-height: 1.8;
+    margin: 39px auto;
+  
 
-// .logoImg{
-//     margin-left: 50px;
-// }
+`
 
-// .mainText{
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     text-align: center;
-//     margin-left: 20px;
-// }
+export const ButtonModal = styled.button`
+  width: 586px;
+  height: 112px;
+  cursor: pointer;
+  font-family: 'SA Thousand';
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 20%;
+  margin-top: 73px;
+  border-radius: 45px;
+  background-color: #000000;
+  color: #FFFFFF;
+`

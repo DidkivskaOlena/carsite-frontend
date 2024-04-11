@@ -7,10 +7,7 @@ export const NavbarContainer = styled.nav`
   background-color: #F5F5F5;
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    padding: 30px 40px;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
+    border-bottom: 1px solid #000000;
 }
 
   @media (min-width: 1280px) {
@@ -23,20 +20,13 @@ export const Header = styled.nav`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
-    padding: 30px 40px;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-  @media (min-width: 1280px) {
+  @media (min-width: 768px) {
     padding-top: 17px;
     align-items: end;
     justify-content: space-between;
     flex-direction: row;
     width: 50%
-  }
+}
 `;
 
 export const LogoContainer = styled(Link)`
@@ -118,4 +108,9 @@ export const LangButton = styled.button`
   border-radius: 50%;
   border: none;
   height: 35px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 14px;
+    margin-right: 16px;
+  }
 `
