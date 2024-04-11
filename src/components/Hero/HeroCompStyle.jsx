@@ -303,6 +303,10 @@ export const Modal = styled.div`
     text-align: center;
     padding: 130px 0;
     transition: 0.3s all;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      padding: 70px 0;
+    }
 `
 
 export const ModalText = styled.div`
@@ -312,7 +316,11 @@ export const ModalText = styled.div`
     line-height: 1.8;
     margin: 39px auto;
   
-
+    @media (min-width: 768px) and (max-width: 1279px) {
+      font-size: 22px;
+      width: 720px;
+      margin: 29px auto;
+    }
 `
 
 export const ButtonModal = styled.button`
@@ -327,4 +335,11 @@ export const ButtonModal = styled.button`
   border-radius: 45px;
   background-color: #000000;
   color: #FFFFFF;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 53px;
+    width: 486px;
+    height: 92px;
+    font-size: 18px;
+  }
 `
