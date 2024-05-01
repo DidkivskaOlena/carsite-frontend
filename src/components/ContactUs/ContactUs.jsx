@@ -9,23 +9,26 @@ export function ContactUs() {
                 <div className={style.gridContainer}>
                     <div className={style.item}>
                         <label className={style.gridItem1}>NAME*</label>
-                        <input className={style.input}></input>
+                        <input type='text' name='name' className={style.input} required></input>
                     </div>
                     <div className={style.item}>
                         <label className={style.gridItem2}>EMAIL*</label>
-                        <input className={style.input}></input>
+                        <input type='email' name='email' className={style.input} required></input>
                     </div>
                     <div className={style.item}>
                         <label className={style.gridItem3}>PHONE*</label>
-                        <input className={style.input}></input>
+                        <input type='tel' name='phone' className={style.input} required></input>
                     </div>
                     <div className={style.itemcontact}>
                         <label className={style.gridItem4}>I PREFER TO BE CONTACTED BY</label>
-                        <input className={style.input}></input>
+                        <input type='text' name='contact' className={style.input}></input>
                     </div>
-                    <label className={style.gridItem5}>MESSAGE*<input className={style.input}></input></label>
+                    <div className={style.itemmassage}>
+                        <label className={style.gridItem5}>MESSAGE*</label>
+                        <input type='text' name='masssage' className={style.input} required></input>
+                    </div>
                 </div>
-                <button>Send Message</button>
+                <button type='submit'>Send Message</button>
             </div>
             <div className={style.background}></div>
         </div>
