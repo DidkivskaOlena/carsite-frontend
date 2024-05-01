@@ -144,7 +144,7 @@ export const GridItem = styled.li`
   border: 0.3px solid #000000;
   object-fit: cover;
   justify-content: center;
-  transition: transform 0.5s cubic-bezier(0, 0.11, 0.35, 2);
+  transition: transform 1s cubic-bezier(0, 0.11, 0.35, 2);
   overflow: hidden;
   cursor: zoom-in;
   &:hover,
@@ -184,7 +184,7 @@ export const MenuBoxBorder = styled.div`
   position: absolute;
   bottom: 36px;
   right: 36px;
-  animation: loading 5s linear infinite;
+  animation: loading 15s linear infinite;
 
   @media (min-width: 768px) and (max-width: 1279px) {
     width: 100px;
@@ -302,7 +302,7 @@ export const Modal = styled.div`
     /*  Побочные стили   */
     text-align: center;
     padding: 130px 0;
-    transition: 0.3s all;
+    transition: 5s all;
 
     @media (min-width: 768px) and (max-width: 1279px) {
       padding: 70px 0;
