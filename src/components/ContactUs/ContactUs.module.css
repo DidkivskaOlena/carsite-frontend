@@ -43,22 +43,34 @@
 }
 
 .gridContainer{
+    width: 45vw;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 22px 40px 22px 140px;
-    gap: 40px 20px;
-    justify-items: start;
+    gap: 20px;
+    justify-items: stretch;
 }
 
 .item{
     display: flex;
     width: 100%;
     align-items: baseline;
+    font-size: 18px;
+    letter-spacing: 0.08em;
 }
 
 .itemcontact{
     grid-column: 1/3;
     display: flex;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+}
+
+.itemmassage{
+    display: flex;
+    font-size: 18px;
+    letter-spacing: 0.08em;
     width: 100%;
 }
 
@@ -80,6 +92,7 @@
 
 .gridItem5{
     grid-column: 1/3;
+    
 }
 
 .background{
