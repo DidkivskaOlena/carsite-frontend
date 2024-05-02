@@ -1,14 +1,15 @@
 import style from './ContactUs.module.css'
+import { t } from "i18next";
 
 export function ContactUs() {
     return(
         <div className={style.container}>
-            <h1 className={style.title}>GET IN TOUCH</h1>
-            <p className={style.text}>You can ask your question or simply get in touch with us by filling out the contact form below.</p>
-            <div className={style.component}>
+            <h1 className={style.title}>{t(`contactus.title`)}</h1>
+            <p className={style.text}>{t(`contactus.text`)}</p>
+            <form className={style.component} name="contact_form" autoComplete="on" noValidate>
                 <div className={style.gridContainer}>
                     <div className={style.item}>
-                        <label className={style.gridItem1}>NAME*</label>
+                        <label className={style.gridItem1}>{t(`contactus.name`)}*</label>
                         <input type='text' name='name' className={style.input} required></input>
                     </div>
                     <div className={style.item}>
@@ -16,20 +17,19 @@ export function ContactUs() {
                         <input type='email' name='email' className={style.input} required></input>
                     </div>
                     <div className={style.item}>
-                        <label className={style.gridItem3}>PHONE*</label>
+                        <label className={style.gridItem3}>{t(`contactus.phone`)}*</label>
                         <input type='tel' name='phone' className={style.input} required></input>
                     </div>
                     <div className={style.itemcontact}>
-                        <label className={style.gridItem4}>I PREFER TO BE CONTACTED BY</label>
+                        <label className={style.gridItem4}>{t(`contactus.prefer`)}</label>
                         <input type='text' name='contact' className={style.input}></input>
                     </div>
-                    <div className={style.itemmassage}>
-                        <label className={style.gridItem5}>MESSAGE*</label>
-                        <input type='text' name='masssage' className={style.input} required></input>
+                    <div className={style.gridItem5}>
+                        <label>{t(`contactus.message`)}*<textarea rows="4" type='text' name='masssage' className={style.textarea} required></textarea></label>
                     </div>
                 </div>
-                <button type='submit'>Send Message</button>
-            </div>
+                <button type='submit' className={style.button}>{t(`contactus.button`)}<img className={style.buttonimg} src="/arrowcontacts.png"/></button>
+            </form>
             <div className={style.background}></div>
         </div>
     )

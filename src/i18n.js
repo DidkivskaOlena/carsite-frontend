@@ -35,6 +35,15 @@ i18n
             conditions: "CURRENTLY THIS PAGE IS NOT AVAILABLE BECAUSE OUR WEBSITE IS STILL IN PROGRESS.",
             request: "WE APPOLOGIZE FOR THE INCONVENIENCE.",
             btn: "RETURN BACK"
+          },
+          contactus: {
+            title: "GET IN TOUCH",
+            text: "You can ask your question or simply get in touch with us by filling out the contact form below.",
+            name: "NAME",
+            phone: "PHONE",
+            prefer: "I PREFER TO BE CONTACTED BY",
+            message:"MESSAGE",
+            button: "Send Message"
           }
         }
       },
@@ -56,6 +65,15 @@ i18n
             conditions: "ЗАРАЗ ЦЯ СТОРІНКА НЕ ДОСТУПНА, ОСКІЛЬКИ НАШ ВЕБ-САЙТ ЩЕ РОЗРОБЛЯЄТЬСЯ.",
             request: "МИ ПРОСИМО ВИБАЧЕННЯ ЗА НЕЗРУЧНОСТІ.",
             btn: "ПОВЕРНУТИСЯ НАЗАД"
+          },
+          contactus: {
+            title: "ЗВ'ЯЖІТЬСЯ З НАМИ",
+            text: "Ви можете поставити своє запитання або просто зв'язатися з нами, заповнивши контактну форму нижче.",
+            name: "ІМ'Я",
+            phone: "ТЕЛЕФОН",
+            prefer: "Я ВІДДАЮ ПЕРЕВАГУ, ЩОБ ЗІ МНОЮ ЗВ'ЯЗАЛИСЯ",
+            message:"ПОВІДОМЛЕННЯ",
+            button: "Відправити"
           }
         }
       },
@@ -77,6 +95,15 @@ i18n
             conditions: "В НАСТОЯЩЕЕ ВРЕМЯ ЭТА СТРАНИЦА НЕ ДОСТУПНА, ПОТОМУ ЧТО НАШ САЙТ ЕЩЕ В РАЗРАБОТКЕ.",
             request: "ПРИНОСИМ СВОИ ИЗВИНЕНИЯ ЗА ДОСТАВЛЕННЫЕ НЕУДОБСТВА.",
             btn: "ВЕРНУТЬСЯ НАЗАД"
+          },
+          contactus: {
+            title: "СВЯЖИТЕСЬ С НАМИ",
+            text: "Вы можете задать свой вопрос или просто связаться с нами, заполнив контактную форму ниже.",
+            name: "ИМЯ",
+            phone: "ТЕЛЕФОН",
+            prefer: "Я ПРЕДПОЧИТАЮ, ЧТОБЫ СО МНОЙ СВЯЗАЛИСЬ",
+            message:"СООБЩЕНИЕ",
+            button: "Отправить"
           }
         }
       },
@@ -98,6 +125,15 @@ i18n
             conditions: "DERZEIT IST DIESE SEITE NICHT VERFÜGBAR, DA UNSERE WEBSITE NOCH IN BEARBEITUNG IST.",
             request: "WIR ENTSCHULDIGEN UNS FÜR DIE UNANNEHMLICHKEITEN.",
             btn: "KEHREN SIE ZURÜCK"
+          },
+          contactus: {
+            title: "IN KONTAKT KOMMEN",
+            text: "Sie können Ihre Frage stellen oder einfach Kontakt mit uns aufnehmen, indem Sie das untenstehende Kontaktformular ausfüllen.",
+            name: "NAME",
+            phone: "TELEFON",
+            prefer: "ICH LIEBE DIE KONTAKTIERUNG VON",
+            message:"NACHRICHT",
+            button: "Senden"
           }
         }
       },
@@ -119,6 +155,15 @@ i18n
             conditions: "MOMENTEEL IS DEZE PAGINA NIET BESCHIKBAAR OMDAT ONZE WEBSITE NOG IN WERKING IS.",
             request: "ONZE EXCUSES VOOR HET ONGEMAK.",
             btn: "TERUGKEREN"
+          },
+          contactus: {
+            title: "NEEM CONTACT OP",
+            text: "U kunt uw vraag stellen of eenvoudigweg contact met ons opnemen door het onderstaande contactformulier in te vullen.",
+            name: "NAAM",
+            phone: "TELEFOON",
+            prefer: "IK WORD VOORKEUR GECONTACTEERD DOOR",
+            message:"BERICHT",
+            button: "Versturen"
           }
         }
       }
