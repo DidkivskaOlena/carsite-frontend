@@ -1,9 +1,11 @@
 import {  NavLink } from "react-router-dom";
-import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, NavbarContainer } from "./NavBarCompStyle"
+import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, NavText, NavbarContainer } from "./NavBarCompStyle"
 import { useAuth } from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/auth/operations";
 import { useTranslation, Trans } from 'react-i18next';
+import { ButtonModal, Modal, ModalText, NavbarLink } from "../Hero/HeroCompStyle";
+import { useState } from "react";
 
 const lngs = {
   en: { nativeName: 'EN' },
@@ -18,12 +20,59 @@ function NavBar() {
     const dispatch = useDispatch()
     const { t, i18n } = useTranslation();
 
+    const [modal, setModal] = useState(false)
+
+    const handleModalOpen = () => {
+      setModal(true);
+    };
+    const handleModalClose = () => {
+      setModal(false);
+    };
+
     return(
       <NavbarContainer>
         <Header>
         <LogoContainer to="/">
           <Logo src="/logo.png"/>
         </LogoContainer>
+        {/* <NavbarLink 
+                  key="Contact"
+                  to="/contacts"
+                  exact="false">
+                      <NavText>
+                        {t(`menu.contact`)}
+                      </NavText>
+          </NavbarLink>
+          <NavbarLink 
+                  // key="FAQ"
+                  // to="/faq"
+                  // exact="false"
+                  onClick={handleModalOpen}
+                  >
+                      <NavText>
+                        {t(`menu.faq`)}
+                      </NavText>
+          </NavbarLink>
+          <NavbarLink 
+                  // key="Services"
+                  // to="/services"
+                  // exact="false"
+                  onClick={handleModalOpen}
+                  >
+                      <NavText>
+                        {t(`menu.services`)}
+                      </NavText>
+          </NavbarLink>
+          <NavbarLink 
+                  // key="Catalogue"
+                  // to="/catalogue"
+                  // exact="false"
+                  onClick={handleModalOpen}
+                  >
+                      <NavText>
+                        {t(`menu.catalogue`)}
+                      </NavText>
+          </NavbarLink> */}
       {/* {isLoggedIn? (
         <div>
           <LoginButtonStyled component={NavLink} to="/admin">
@@ -45,6 +94,14 @@ function NavBar() {
           ))}
         </LangContainer>
         </Header>
+        {modal && (
+        <Modal>
+          <ModalText>{t(`modal.greetings`)}</ModalText>
+          <ModalText>{t(`modal.conditions`)}</ModalText>
+          <ModalText>{t(`modal.request`)}</ModalText>
+            <ButtonModal onClick={handleModalClose}>{t(`modal.btn`)}</ButtonModal>
+        </Modal>
+      ) }
       </NavbarContainer>
     )
 }

@@ -249,7 +249,7 @@ justify-content: space-between;
 export const MenuBoxCatalogue = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end
+  justify-content: flex-end;
   height: 27vh;
   width: 24vw;
   background: #FFFFFF;
