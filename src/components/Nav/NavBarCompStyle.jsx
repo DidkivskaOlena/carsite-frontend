@@ -29,6 +29,20 @@ export const Header = styled.nav`
 }
 `;
 
+export const NavText = styled.div`
+  letter-spacing: 0.08em;
+  align-items: center;
+  font-family: "Jura", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 13px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+`
+
 export const LogoContainer = styled(Link)`
   // display: flex;
   // flex-direction: column;

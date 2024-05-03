@@ -54,9 +54,11 @@ const Hero = () => {
             </GridItem>
             <GridItem item xs={3}>
               <NavbarLink 
-                  key="FAQ"
-                  to="/faq"
-                  exact="false">
+                  onClick={handleModalOpen}
+                  // key="FAQ"
+                  // to="/faq"
+                  // exact="false"
+                  >
                   <MenuBoxFaq>
                     <MenuText>
                       {t(`menu.faq`)}
@@ -67,9 +69,11 @@ const Hero = () => {
             </GridItem>
             <GridItem item xs={3}>
               <NavbarLink 
-                  key="Services"
-                  to="/services"
-                  exact="false">
+                  onClick={handleModalOpen}
+                  // key="Services"
+                  // to="/services"
+                  // exact="false"
+                  >
                   <MenuBoxServices>
                     <MenuText>
                       {t(`menu.services`)}
