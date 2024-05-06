@@ -20,6 +20,10 @@ export const Header = styled.nav`
     width: 50%;
     width: ${props => props.theme.whole}
 }
+
+  @media (min-width: 1024px) and (max-width: 1600px) {
+    padding-top: 12px;
+  }
 `;
 
 export const NavText = styled.div`
@@ -30,9 +34,14 @@ export const NavText = styled.div`
   font-weight: 400;
   margin-bottom: 25px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
-    font-size: 14px;
-    line-height: 22px;
+  @media (min-width: 1024px) and (max-width: 1400px) {
+    font-size: 12px;
+    margin-bottom: 17px;
+}
+
+  @media (min-width: 1401px) and (max-width: 1600px) {
+    font-size: 16px;
+    margin-bottom: 22px;
   }
 `
 
@@ -46,6 +55,16 @@ export const LogoContainer = styled(Link)`
 export const Logo = styled.img`
   width: 235px;
   height: 75px;
+
+  @media (min-width: 1024px) and (max-width: 1400px) {
+    width: 160px;
+  height: 51px;
+}
+
+  @media (min-width: 1401px) and (max-width: 1600px) {
+    width: 205px;
+  height: 66px;
+  }
 `;
 
 export const AuthContainer = styled.div`
@@ -109,7 +128,7 @@ export const LangContainer = styled.div`
 `
 
 export const LangButton = styled.button`
-  font-size: 20px;
+  font-size: 1vw;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #000000;
   margin-right: 25px;
@@ -117,8 +136,8 @@ export const LangButton = styled.button`
   border: none;
   height: 35px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
-    font-size: 14px;
-    margin-right: 16px;
-  }
+  @media (min-width: 1024px) and (max-width: 1600px) {
+   
+    height: 2vw;
+}
 `
