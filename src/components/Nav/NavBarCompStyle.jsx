@@ -28,7 +28,7 @@ export const NavText = styled.div`
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 13px;
+  margin-bottom: 25px;
 
   @media (min-width: 768px) and (max-width: 1279px) {
     font-size: 14px;
