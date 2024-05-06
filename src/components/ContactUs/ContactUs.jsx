@@ -21,6 +21,7 @@ export function ContactUs() {
                         <label htmlFor='phone' className={style.gridItem3}>{t(`contactus.phone`)}*</label>
                         <input type='tel' id='phone' name='phone' className={style.input} required></input>
                     </div>
+                    <p className={style.comment}>{t(`contactus.comment`)}</p>
                     <div className={style.itemcontact}>
                         <label htmlFor='prefer' className={style.gridItem4}>{t(`contactus.prefer`)}</label>
                         <input type='text' id='prefer' name='prefer' className={style.input}></input>

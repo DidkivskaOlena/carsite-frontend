@@ -42,7 +42,7 @@ export const MainComment = styled.p`
   font-family: "Jura", sans-serif;
   font-weight: 500;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 16px;
     margin-left: 105px;
     margin-bottom: 61px;
@@ -58,7 +58,7 @@ export const Comment = styled.p`
   font-family: "Jura", sans-serif;
   font-weight: 500;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 16px;
   }
 `
@@ -74,7 +74,7 @@ export const HeroBox = styled.div`
   border-radius: 20px;
   border: 1px solid #000000;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     top: 15px;
     right: 15px;
   }
@@ -88,7 +88,7 @@ export const HeroBoxTitle = styled.p`
   display: inline-block;
   letter-spacing: 0.08em;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 54px;
   }
 `
@@ -102,7 +102,7 @@ export const HeroBoxText = styled.p`
   letter-spacing: 0.08em;
   margin-right: 10px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 18px;
   }
 `
@@ -116,7 +116,7 @@ export const HeroBoxTextSpan = styled.p`
   letter-spacing: 0.08em;
   margin-right: 10px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 18px;
   }
 `
@@ -153,7 +153,7 @@ export const GridItem = styled.li`
     box-shadow: 0px 0.1px 5px 1px #0b2336;
   }
   
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     height: 26vh;
   }
 `;
@@ -164,7 +164,7 @@ export const NavbarLink = styled(NavLink)`
   line-height: 17px;
   text-decoration: none;
 
-  @media (min-width: 768px) and (max-width: 1279px){
+  @media (min-width: 768px) and (max-width: 1439px){
     font-size: 18px;
   }
 `;
@@ -174,7 +174,7 @@ export const MenuBox = styled.div`
   bottom: 85px;
   right: 85px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     bottom: 45px;
     right: 45px;
   }
@@ -186,7 +186,7 @@ export const MenuBoxBorder = styled.div`
   right: 36px;
   animation: loading 15s linear infinite;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     width: 100px;
     bottom: 14px;
     right: 14px;
@@ -208,7 +208,7 @@ export const MenuBoxContact = styled.div`
   border-radius: 20px;
   border: 1px solid #000000;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     height: 26vh;
     width: 23vw;
   }
@@ -224,7 +224,7 @@ justify-content: space-between;
   border-radius: 20px;
   border: 1px solid #000000;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     height: 26vh;
     width: 23vw;
   }
@@ -241,7 +241,7 @@ justify-content: space-between;
   border: 1px solid #000000;
   color: #FFFFFF;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     height: 26vh;
     width: 23vw;
   }
@@ -257,7 +257,7 @@ export const MenuBoxCatalogue = styled.div`
   border: 1px solid #FFFFFF;
   padding: 17px 20px;
 
-  @media (min-width: 768px) and (max-width: 1279px){
+  @media (min-width: 768px) and (max-width: 1439px){
     height: 26vh;
     width: 23vw;
   }
@@ -273,7 +273,7 @@ export const ImgCatalogue = styled.div`
   margin-top: 50px;
   margin-bottom: 10px;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     margin-top: 10px;
   }
 `
@@ -283,7 +283,7 @@ export const MenuText = styled.div`
   align-items: center;
   font-family: "Jura", sans-serif;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 11px;
     line-height: 22px;
   }
@@ -304,7 +304,7 @@ export const Modal = styled.div`
     padding: 130px 0;
     transition: 5s all;
 
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) and (max-width: 1439px) {
       padding: 70px 0;
     }
 `
@@ -316,7 +316,7 @@ export const ModalText = styled.div`
     line-height: 1.8;
     margin: 39px auto;
   
-    @media (min-width: 768px) and (max-width: 1279px) {
+    @media (min-width: 768px) and (max-width: 1439px) {
       font-size: 22px;
       width: 720px;
       margin: 29px auto;
@@ -336,7 +336,7 @@ export const ButtonModal = styled.button`
   background-color: #000000;
   color: #FFFFFF;
 
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1439px) {
     margin-top: 53px;
     width: 486px;
     height: 92px;

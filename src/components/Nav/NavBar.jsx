@@ -1,11 +1,11 @@
-import {  NavLink } from "react-router-dom";
 import { Header, LangButton, LangContainer, LoginButtonStyled, Logo, LogoContainer, NavText, NavbarContainer } from "./NavBarCompStyle"
 import { useAuth } from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
-import { logOut } from "../../redux/auth/operations";
 import { useTranslation, Trans } from 'react-i18next';
 import { ButtonModal, Modal, ModalText, NavbarLink } from "../Hero/HeroCompStyle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {useLocation } from "react-router-dom"
+
 
 const lngs = {
   en: { nativeName: 'EN' },
@@ -15,12 +15,18 @@ const lngs = {
   nl: { nativeName: 'NL' }
 };
 
+const theme = {
+  whole: "100%",
+};
+
 function NavBar() {
-    const {isLoggedIn} = useAuth()
-    const dispatch = useDispatch()
     const { t, i18n } = useTranslation();
+    let location = useLocation();
+    console.log(location);
+    
 
     const [modal, setModal] = useState(false)
+    const [page, setPage] = useState("/")
 
     const handleModalOpen = () => {
       setModal(true);
@@ -29,13 +35,19 @@ function NavBar() {
       setModal(false);
     };
 
+    useEffect(()=> {
+      setPage(location.pathname)
+    }, [location.pathname], )
+
     return(
+      <>
+        {location.pathname === "/contacts" ?  
       <NavbarContainer>
-        <Header>
+       <Header theme={theme}>
         <LogoContainer to="/">
           <Logo src="/logo.png"/>
         </LogoContainer>
-        {/* <NavbarLink 
+           <NavbarLink 
                   key="Contact"
                   to="/contacts"
                   exact="false">
@@ -72,28 +84,31 @@ function NavBar() {
                       <NavText>
                         {t(`menu.catalogue`)}
                       </NavText>
-          </NavbarLink> */}
-      {/* {isLoggedIn? (
-        <div>
-          <LoginButtonStyled component={NavLink} to="/admin">
-            Admin
-        </LoginButtonStyled>
-        <p>Welcome, ADMIN</p>
-        <button type="button" onClick={() => dispatch(logOut())}>
-          Logout
-        </button>
-      </div>
-      ) : (<LoginButtonStyled component={NavLink} to="/login">
-            Login
-        </LoginButtonStyled>) } */}
+          </NavbarLink>
         <LangContainer>
           {Object.keys(lngs).map((lng) => (
-            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000', fontSize: "18px" }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
             </LangButton>
           ))}
         </LangContainer>
         </Header>
+        </NavbarContainer>
+         : 
+         <NavbarContainer style={{borderBottom: "1px solid #000000"}}>
+          <Header>
+          <LogoContainer to="/">
+            <Logo src="/logo.png"/>
+          </LogoContainer>
+            <LangContainer>
+              {Object.keys(lngs).map((lng) => (
+                <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+                  {lngs[lng].nativeName}
+                </LangButton>
+              ))}
+            </LangContainer>
+          </Header>
+        
         {modal && (
         <Modal>
           <ModalText>{t(`modal.greetings`)}</ModalText>
@@ -102,7 +117,8 @@ function NavBar() {
             <ButtonModal onClick={handleModalClose}>{t(`modal.btn`)}</ButtonModal>
         </Modal>
       ) }
-      </NavbarContainer>
+      </NavbarContainer> }
+      </>
     )
 }
 
