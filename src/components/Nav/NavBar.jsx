@@ -87,7 +87,7 @@ function NavBar() {
           </NavbarLink>
         <LangContainer style={{marginBottom: "15px"}}>
           {Object.keys(lngs).map((lng) => (
-            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000', fontSize: "18px" }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+            <LangButton key={lng} style={{ backgroundColor: i18n.resolvedLanguage === lng ? '#000000' : '#F5F5F5' , color: i18n.resolvedLanguage === lng ? '#FFFFFF' : '#000000' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
             </LangButton>
           ))}
