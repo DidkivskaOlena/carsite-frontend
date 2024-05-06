@@ -43,7 +43,8 @@ i18n
             phone: "PHONE",
             prefer: "I PREFER TO BE CONTACTED BY",
             message:"MESSAGE",
-            button: "Send Message"
+            button: "Send Message",
+            comment: "Please specify a country code"
           }
         }
       },
@@ -73,7 +74,8 @@ i18n
             phone: "ТЕЛЕФОН",
             prefer: "Я ВІДДАЮ ПЕРЕВАГУ, ЩОБ ЗІ МНОЮ ЗВ'ЯЗАЛИСЯ",
             message:"ПОВІДОМЛЕННЯ",
-            button: "Відправити"
+            button: "Відправити",
+            comment: "Будь ласка, вкажіть код країни"
           }
         }
       },
@@ -103,7 +105,8 @@ i18n
             phone: "ТЕЛЕФОН",
             prefer: "Я ПРЕДПОЧИТАЮ, ЧТОБЫ СО МНОЙ СВЯЗАЛИСЬ",
             message:"СООБЩЕНИЕ",
-            button: "Отправить"
+            button: "Отправить",
+            comment: "Пожалуйста, укажите код страны"
           }
         }
       },
@@ -133,7 +136,8 @@ i18n
             phone: "TELEFON",
             prefer: "ICH LIEBE DIE KONTAKTIERUNG VON",
             message:"NACHRICHT",
-            button: "Senden"
+            button: "Senden",
+            comment: "Bitte geben Sie einen Ländercode an"
           }
         }
       },
@@ -163,7 +167,8 @@ i18n
             phone: "TELEFOON",
             prefer: "IK WORD VOORKEUR GECONTACTEERD DOOR",
             message:"BERICHT",
-            button: "Versturen"
+            button: "Versturen",
+            comment: "Specificeer een landcode"
           }
         }
       }

@@ -5,14 +5,6 @@ export const NavbarContainer = styled.nav`
   margin-left: 20px;
   margin-right: 20px;
   background-color: #F5F5F5;
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    border-bottom: 1px solid #000000;
-}
-
-  @media (min-width: 1280px) {
-    border-bottom: 1px solid #000000;
-  }
 `;
 
 export const Header = styled.nav`
@@ -25,16 +17,17 @@ export const Header = styled.nav`
     align-items: end;
     justify-content: space-between;
     flex-direction: row;
-    width: 50%
+    width: 50%;
+    width: ${props => props.theme.whole}
 }
 `;
 
 export const NavText = styled.div`
   letter-spacing: 0.08em;
   align-items: center;
-  font-family: "Jura", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   margin-bottom: 13px;
 
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -117,6 +110,7 @@ export const LangContainer = styled.div`
 
 export const LangButton = styled.button`
   font-size: 20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #000000;
   margin-right: 25px;
   border-radius: 50%;
