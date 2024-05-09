@@ -1,22 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {sendMail} from "./operations"
+import {sendMail} from "./operation";
 
 const mailInitialState = {
     mail: [],
-    isLoading: false,
+    isSending: false,
     error: null,
 };
-
-const handlePending = (state) => {
-    state.isLoading = true;
-  };
   
-  const handleRejected = (state, action) => {
-    state.isLoading = false;
-    state.error = action.payload;
-  };
-  
-  // add car handlers
+  // add mail handlers
   const handleaddNewMailPending = (state) => {
     state.isAdding = true;
   };
@@ -24,10 +15,13 @@ const handlePending = (state) => {
   const handleaddNewMailSuccess = (state, { payload }) => {
     state.error = null;
     state.mail.unshift(payload);
+    state.isSending = true;
+    console.log(state);
   };
   
   const handleaddNewMailRejected = (state, action) => {
     state.error = action.payload;
+    state.isSending = false;
   };
 
 const mailSlice = createSlice({
@@ -43,4 +37,4 @@ const mailSlice = createSlice({
 });
 
 // Експортуємо генератори екшенів та редюсер
-export const carsReducer = mailSlice.reducer;
+export const mailReducer = mailSlice.reducer;

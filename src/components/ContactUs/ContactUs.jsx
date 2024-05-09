@@ -1,9 +1,12 @@
 import { ErrorMessage, Formik} from 'formik';
+import { ErrorBoundary } from "react-error-boundary";
 import * as Yup from "yup";
 import { t } from "i18next";
 import { ContactBackground, ContactButton, ContactComment, ContactContainer, ContactForm, ContactGrid, ContactGridItem, ContactImage, ContactInput, ContactItem1, ContactItem2, ContactItem3, ContactItem4, ContactItem5, ContactPrefer, ContactText, ContactTextarea, ContactTitle } from './ContactUsStyled.jsx';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { sendMail } from '../../redux/mail/operation.js';
+import { selectIsSending} from '../../redux/mail/selectors.js';
+import { Done } from "./Done.jsx"
 
 const initialValues = {
     name: "", 
@@ -36,21 +39,27 @@ const validateSchema = Yup.object().shape({
 
 export function ContactUs() {
     const dispatch = useDispatch();
-    
+    const isSending = useSelector(selectIsSending);
+    console.log(isSending);
+
     return(
         <ContactContainer >
             <ContactTitle >{t(`contactus.title`)}</ContactTitle>
             <ContactText>{t(`contactus.text`)}</ContactText>
-            <Formik
+            <ErrorBoundary 
+                fallback={<ContactForm>
+                            <Done/>
+                        </ContactForm> }>
+                        <Formik
                 initialValues={initialValues}
                 validationSchema={validateSchema}
                 onSubmit={(values) => {
                     dispatch(sendMail(values))
                 }}
                 >
-            
                 <ContactForm >
-                <ContactGrid>
+                    {isSending ? (<><Done/></>) : (<>
+                        <ContactGrid>
                     <ContactGridItem>
                         <ContactItem1 htmlFor="name">{t(`contactus.name`)}*</ContactItem1>
                         <ContactInput type='text' id="name" name='name' required></ContactInput>
@@ -77,9 +86,10 @@ export function ContactUs() {
                         <ErrorMessage name="message" component="div"></ErrorMessage>
                     </ContactItem5>
                 </ContactGrid>
-                <ContactButton type='submit' >{t(`contactus.button`)}<ContactImage src="/arrowcontacts.png"/></ContactButton>
+                <ContactButton type='submit' >{t(`contactus.button`)}<ContactImage src="/arrowcontacts.png"/></ContactButton></>)}
             </ContactForm>
             </Formik>
+            </ErrorBoundary>
             <ContactBackground></ContactBackground>
         </ContactContainer>
     )

@@ -131,7 +131,6 @@ export const ContactText = styled.p`
     font-size: 20px;
     letter-spacing: 0.08em;
     padding: 0 15px;
-    font-weight: 600;
     margin-left: 10px;
     
 
@@ -140,7 +139,7 @@ export const ContactText = styled.p`
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       &:-internal-autofill-selected {
@@ -158,13 +157,16 @@ export const ContactTextarea = styled(Field)`
     font-size: 20px;
     letter-spacing: 0.08em;
     margin-top: 9px;
+    height: 120px;
 
     @media (min-width: 1024px) and (max-width: 1400px) {
         font-size: 13px;
+        height: 70px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 18px;
+        font-size: 16px;
+        height: 90px;
       }
     `
 
@@ -181,6 +183,7 @@ export const ContactComment = styled.p`
 
     @media (min-width: 1401px) and (max-width: 1600px) {
         font-size: 11px;
+        
       }
     `
 
@@ -266,7 +269,7 @@ export const ContactPrefer = styled.div`
         width: 145px;
         height: 30px;
         left: 460px;
-        top: 4px;
+        top: 18px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
@@ -274,7 +277,7 @@ export const ContactPrefer = styled.div`
         width: 210px;
         height: 45px;
         left: 580px;
-        top: 5px;
+        top: 21px;
       }
 
     @media screen and (min-width: 1601px) {
@@ -282,11 +285,58 @@ export const ContactPrefer = styled.div`
         width: 240px;
         height: 51px;
         left: 730px;
-        top: 15px;
+        top: 23px;
     }
     `
 
     export const ContactImage = styled.img`
     width: 16px;
+    }
+    `
+
+    export const DoneTitle = styled.h1`
+       font-size: 18px;
+       font-weight: 400;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       letter-spacing: 0.08em;
+       margin: 0 auto;
+    }
+    `
+
+    export const DoneText = styled.p`
+       font-size: 18px;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       letter-spacing: 0.08em;
+       width: 375px;
+       margin: 50px auto;
+    }
+    `
+
+    export const DoneButton = styled.a`
+    background-color: #DDFF00;
+    border-radius: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    padding: 15px;
+    text-decoration: none;
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        font-size: 11px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        font-size: 16px;
+      }
+
+    @media screen and (min-width: 1601px) {
+        font-size: 18px;
+    }
+    `
+
+    export const DoneContainer = styled.p`
+       text-align: center;
+       height: 100%;
+       align-content: center;
     }
     `

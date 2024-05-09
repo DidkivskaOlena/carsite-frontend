@@ -45,6 +45,11 @@ i18n
             message:"MESSAGE",
             button: "Send Message",
             comment: "Please specify a country code"
+          },
+          done: {
+              title: "THANK YOU!",
+              text: "WE RECEIVED YOUR MESSAGE. OUR TEAM WILL CONTACT YOU WITHIN 2 WORKING DAYS.",
+              button: "Back to main page"
           }
         }
       },
@@ -76,6 +81,11 @@ i18n
             message:"ПОВІДОМЛЕННЯ",
             button: "Відправити",
             comment: "Будь ласка, вкажіть код країни"
+          },
+          done: {
+              title: "ДЯКУЄМО ВАМ!",
+              text: "МИ ОТРИМАЛИ ВАШЕ ПОВІДОМЛЕННЯ. НАША КОМАНДА ЗВ'ЯЖЕТЬСЯ З ВАМИ ПРОТЯГОМ 2 РОБОЧИХ ДНІВ.",
+              button: "Повернутися на головну сторінку"
           }
         }
       },
@@ -107,6 +117,11 @@ i18n
             message:"СООБЩЕНИЕ",
             button: "Отправить",
             comment: "Пожалуйста, укажите код страны"
+          },
+          done: {
+              title: "СПАСИБО!",
+              text: "МЫ ПОЛУЧИЛИ ВАШЕ СООБЩЕНИЕ. НАША КОМАНДА СВЯЖЕТСЯ С ВАМИ В ТЕЧЕНИЕ 2 РАБОЧИХ ДНЕЙ.",
+              button: "Вернуться на главную страницу"
           }
         }
       },
@@ -138,6 +153,11 @@ i18n
             message:"NACHRICHT",
             button: "Senden",
             comment: "Bitte geben Sie einen Ländercode an"
+          },
+          done: {
+              title: "DANKE SCHÖN!",
+              text: "Wir haben Ihre Nachricht erhalten. Unser Team wird sich innerhalb von 2 Werktagen mit Ihnen in Verbindung setzen.",
+              button: "Zurück zur Hauptseite"
           }
         }
       },
@@ -169,6 +189,11 @@ i18n
             message:"BERICHT",
             button: "Versturen",
             comment: "Specificeer een landcode"
+          },
+          done: {
+              title: "BEDANKT!",
+              text: "WIJ HEBBEN UW BERICHT ONTVANGEN. ONS TEAM NEEM BINNEN 2 WERKDAGEN CONTACT MET U OP.",
+              button: "Terug naar de hoofdpagina"
           }
         }
       }
