@@ -4,6 +4,8 @@ import { selectCars } from "../../redux/cars/selectors";
 import { useEffect } from "react";
 import { fetchCars } from "../../redux/cars/operations";
 import { Grid } from "@mui/material";
+import { ButtonModalFaq, Modal, ModalText } from "../../components/Hero/HeroCompStyle";
+import { t } from "i18next";
 
 const CarCatalogue = () => {
     const dispatch = useDispatch();
@@ -15,13 +17,19 @@ const CarCatalogue = () => {
   
     return (
       <div>
-        <div>
+        <Modal>
+                <ModalText>{t(`modal.greetings`)}</ModalText>
+                <ModalText>{t(`modal.conditions`)}</ModalText>
+                <ModalText>{t(`modal.request`)}</ModalText>
+            <ButtonModalFaq href="/">{t(`modal.btn`)}</ButtonModalFaq>
+        </Modal>
+        {/* <div>
         {isLoading && <p>Loading ... </p>}
         {error && <p>{error}</p>}
         <Grid container spacing={4}>
           {cars?.length > 0 && <CardComponent cars={cars}/>}
         </Grid>
-        </div>
+        </div> */}
       </div>
     );
 }

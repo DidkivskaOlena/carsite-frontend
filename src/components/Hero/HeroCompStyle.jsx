@@ -296,7 +296,7 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: #FFFFFF;
-    z-index: 20;
+    z-index: 100;
     transition: .3s all;
 
     /*  Побочные стили   */
@@ -341,5 +341,25 @@ export const ButtonModal = styled.button`
     width: 486px;
     height: 92px;
     font-size: 18px;
+  }
+`
+export const ButtonModalFaq = styled.a`
+  cursor: pointer;
+  font-family: 'SA Thousand';
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 20%;
+  border-radius: 45px;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 40px 80px;
+  text-decoration: none;
+  position: relative;
+  top: 100px;
+  left: 1vw;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    font-size: 18px;
+    padding: 30px 70px;
   }
 `

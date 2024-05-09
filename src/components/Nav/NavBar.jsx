@@ -22,7 +22,6 @@ const theme = {
 function NavBar() {
     const { t, i18n } = useTranslation();
     let location = useLocation();
-    console.log(location);
     
 
     const [modal, setModal] = useState(false)
@@ -56,30 +55,27 @@ function NavBar() {
                       </NavText>
           </NavbarLink>
           <NavbarLink 
-                  // key="FAQ"
-                  // to="/faq"
-                  // exact="false"
-                  onClick={handleModalOpen}
+                  key="FAQ"
+                  to="/faq"
+                  exact="false"
                   >
                       <NavText>
                         {t(`menu.faq`)}
                       </NavText>
           </NavbarLink>
           <NavbarLink 
-                  // key="Services"
-                  // to="/services"
-                  // exact="false"
-                  onClick={handleModalOpen}
+                  key="Services"
+                  to="/services"
+                  exact="false"
                   >
                       <NavText>
                         {t(`menu.services`)}
                       </NavText>
           </NavbarLink>
           <NavbarLink 
-                  // key="Catalogue"
-                  // to="/catalogue"
-                  // exact="false"
-                  onClick={handleModalOpen}
+                  key="Catalogue"
+                  to="/catalogue"
+                  exact="false"
                   >
                       <NavText>
                         {t(`menu.catalogue`)}

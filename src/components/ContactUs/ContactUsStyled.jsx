@@ -1,10 +1,13 @@
-.container{
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
+import { Field, Form } from "formik";
+import styled from "styled-components";
 
-.component{
+export const ContactContainer = styled.div`
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    `
+
+export const ContactForm = styled(Form)`
     background-color: #FFFFFF;
     z-index: 10;
     border: 1px solid #000000;
@@ -17,44 +20,42 @@
         padding: 40px 55px 55px 45px;
     }
 
-    @media (min-width: 1401px) and (max-width: 1600px) {
+    @media (min-width: 1401px) and (max-width: 1600px){
         width: 886px;
         height: 480px;
         padding: 53px 70px 70px 57px;
-      }
+    }
 
-    @media screen and (min-width: 1601px) {
-        padding: 60px 80px 80px 65px;
+    @media (min-width: 1601px){
         width: 1077px;
         height: 584px;
+        padding: 60px 80px 80px 65px;
     }
-}
+`
 
-.title{
+export const ContactTitle = styled.h1`
     font-family: 'SA Thousand', 'Trebuchet MS', sans-serif;
     line-height: 3;
     letter-spacing: 0.08em;
 
-    @media (min-width: 1024px) and (max-width: 1400px) {
+    @media (min-width: 1024px) and (max-width: 1400px){
         font-size: 18px;
         margin-top: 14px;
         margin-bottom: 5px;
     }
-
-    @media (min-width: 1401px) and (max-width: 1600px) {
+    @media (min-width: 1401px) and (max-width: 1600px){
         font-size: 24px;
         margin-top: 18px;
         margin-bottom: 5px;
-      }
-
-    @media screen and (min-width: 1600px) {
+    }
+    @media (min-width: 1601px){
         font-size: 27px;
         margin-top: 20px;
         margin-bottom: 5px;
     }
-}
+    `
 
-.text{
+export const ContactText = styled.p`
     font-family: "Jura", sans-serif;
     line-height: 1.1;
     letter-spacing: 0.08em;
@@ -76,58 +77,10 @@
         font-size: 18px;
         margin-bottom: 58px;
     }
-}
+    `
 
-.input{
-    width: 36%;
-    color: #000;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    background: transparent;
 
-    flex-grow: 1;
-    font-size: 20px;
-    letter-spacing: 0.08em;
-    padding: 0 15px;
-    font-weight: 600;
-    margin-left: 10px;
-    
-
-    @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 13px;
-    }
-
-    @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 18px;
-      }
-}
-
-input:-internal-autofill-selected {
-    background-color: white !important;
-}
-
-.textarea{
-    resize: none;
-    width: 100%;
-    background-color: #F5F5F5;
-    border: none;
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 20px;
-    letter-spacing: 0.08em;
-    margin-top: 9px;
-
-    @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 13px;
-    }
-
-    @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 18px;
-      }
-}
-
-.gridContainer{
+    export const ContactGrid = styled.div`
     display: grid;
     grid-template-columns: auto auto;
     justify-items: stretch;
@@ -146,9 +99,9 @@ input:-internal-autofill-selected {
         gap: 25px 20px;
         grid-template-rows: 50px 10px 50px 60px;
     }
-}
+    `
 
-.item{
+    export const ContactGridItem = styled.div`
     display: flex;
     width: 100%;
     align-items: baseline;
@@ -164,9 +117,60 @@ input:-internal-autofill-selected {
     @media (min-width: 1401px) and (max-width: 1600px) {
         font-size: 16px;
       }
-}
+    `
 
-.comment{
+    export const ContactInput = styled(Field)`
+    width: 36%;
+    color: #000;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+
+    flex-grow: 1;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    padding: 0 15px;
+    margin-left: 10px;
+    
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        font-size: 13px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        font-size: 16px;
+      }
+
+      &:-internal-autofill-selected {
+        background-color: white !important;
+    }
+    `
+
+export const ContactTextarea = styled(Field)`
+    resize: none;
+    width: 100%;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    margin-top: 9px;
+    height: 120px;
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        font-size: 13px;
+        height: 70px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        font-size: 16px;
+        height: 90px;
+      }
+    `
+
+export const ContactComment = styled.p`
     grid-column: 1/2;
     font-size: 12px;
     text-align: left;
@@ -179,10 +183,11 @@ input:-internal-autofill-selected {
 
     @media (min-width: 1401px) and (max-width: 1600px) {
         font-size: 11px;
+        
       }
-}
+    `
 
-.itemcontact{
+export const ContactPrefer = styled.div`
     grid-column: 1/3;
     display: flex;
     width: 100%;
@@ -198,29 +203,29 @@ input:-internal-autofill-selected {
     @media (min-width: 1401px) and (max-width: 1600px) {
         font-size: 16px;
       }
-}
+    `
 
-.gridItem1{
+    export const ContactItem1 = styled.label`
     grid-column: 1/2;
     line-height: 0;
-}
+    `
 
-.gridItem2{
+    export const ContactItem2 = styled.label`
     grid-column: 2/3;
     line-height: 0;
-}
+    `
 
-.gridItem3{
+    export const ContactItem3 = styled.label`
     grid-column: 1/2;
     line-height: 1.5;
-}
+    `
 
-.gridItem4{
+    export const ContactItem4 = styled.label`
     grid-column: 1/3;
     line-height: 1.1;
-}
+    `
 
-.gridItem5{
+    export const ContactItem5 = styled.div`
     text-align: left;
     grid-column: 1/3;
     font-size: 18px;
@@ -235,18 +240,18 @@ input:-internal-autofill-selected {
     @media (min-width: 1401px) and (max-width: 1600px) {
         font-size: 16px;
       }
-}
+    `
 
-.background{
+    export const ContactBackground = styled.div`
     background-color: black;
     width: 100%;
     height: 36vh;
     position: absolute;
     bottom: 0;
     z-index: -2;
-}
+    `
 
-.button{
+    export const ContactButton = styled.button`
     position: relative;
     left: 650px;
     top: 30px;
@@ -264,7 +269,7 @@ input:-internal-autofill-selected {
         width: 145px;
         height: 30px;
         left: 460px;
-        top: 4px;
+        top: 18px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
@@ -272,7 +277,7 @@ input:-internal-autofill-selected {
         width: 210px;
         height: 45px;
         left: 580px;
-        top: 5px;
+        top: 21px;
       }
 
     @media screen and (min-width: 1601px) {
@@ -280,11 +285,58 @@ input:-internal-autofill-selected {
         width: 240px;
         height: 51px;
         left: 730px;
-        top: 15px;
+        top: 23px;
     }
-}
+    `
 
-.buttonimg{
+    export const ContactImage = styled.img`
     width: 16px;
+    }
+    `
 
-}
+    export const DoneTitle = styled.h1`
+       font-size: 18px;
+       font-weight: 400;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       letter-spacing: 0.08em;
+       margin: 0 auto;
+    }
+    `
+
+    export const DoneText = styled.p`
+       font-size: 18px;
+       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       letter-spacing: 0.08em;
+       width: 375px;
+       margin: 50px auto;
+    }
+    `
+
+    export const DoneButton = styled.a`
+    background-color: #DDFF00;
+    border-radius: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    padding: 15px;
+    text-decoration: none;
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        font-size: 11px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        font-size: 16px;
+      }
+
+    @media screen and (min-width: 1601px) {
+        font-size: 18px;
+    }
+    `
+
+    export const DoneContainer = styled.p`
+       text-align: center;
+       height: 100%;
+       align-content: center;
+    }
+    `
