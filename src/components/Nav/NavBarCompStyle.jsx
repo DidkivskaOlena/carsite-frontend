@@ -30,17 +30,17 @@ export const NavText = styled.div`
   letter-spacing: 0.08em;
   align-items: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 25px;
 
   @media (min-width: 1024px) and (max-width: 1400px) {
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 17px;
 }
 
   @media (min-width: 1401px) and (max-width: 1600px) {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 22px;
   }
 `
@@ -88,7 +88,7 @@ export const AuthButtonStyled = styled(NavLink)`
   background: #DDFF00;
   border-radius: 40px;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   color: #D0B28F;
   text-decoration: none;
   height: 47px;
@@ -112,7 +112,7 @@ export const LoginButtonStyled = styled(NavLink)`
   background: #DDFF00;
   border-radius: 40px;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   color: #D0B28F;
   text-decoration: none;
   padding: 12px 28px;
