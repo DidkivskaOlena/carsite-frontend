@@ -23,6 +23,7 @@ const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
+const SSL = lazy(() => import("../.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
 
 function App() {
   const {t} = useTranslation()
@@ -39,7 +40,7 @@ function App() {
               <Route path="/favorites" element={<Favorites/>}/>
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
-              <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={"../.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"}/>
+              <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={SSL}/>
               <Route path="/login" element={
                 <RestrictedRoute redirectTo="/admin" component={<LoginPage/>}/>
               }/>
