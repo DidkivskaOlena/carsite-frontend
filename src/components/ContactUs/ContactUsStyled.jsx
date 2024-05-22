@@ -59,12 +59,12 @@ export const ContactText = styled.p`
     font-family: "Jura", sans-serif;
     line-height: 1.1;
     letter-spacing: 0.08em;
-    font-size: 18px;
+    font-size: 16px;
     width: 50%;
     margin: 0 auto 40px;
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 38px;
     }
 
@@ -105,13 +105,13 @@ export const ContactText = styled.p`
     display: flex;
     width: 100%;
     align-items: baseline;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* font-weight: 600; */
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
@@ -128,14 +128,14 @@ export const ContactText = styled.p`
     background: transparent;
 
     flex-grow: 1;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.08em;
     padding: 0 15px;
     margin-left: 10px;
     
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
@@ -154,13 +154,13 @@ export const ContactTextarea = styled(Field)`
     border: none;
     border-radius: 20px;
     padding: 15px;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     margin-top: 9px;
     height: 120px;
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 13px;
+        font-size: 14px;
         height: 70px;
     }
 
@@ -191,7 +191,7 @@ export const ContactPrefer = styled.div`
     grid-column: 1/3;
     display: flex;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     align-items: baseline;
@@ -201,7 +201,7 @@ export const ContactPrefer = styled.div`
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 16px;
+        font-size: 14px;
       }
     `
 
@@ -228,7 +228,7 @@ export const ContactPrefer = styled.div`
     export const ContactItem5 = styled.div`
     text-align: left;
     grid-column: 1/3;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
@@ -238,7 +238,7 @@ export const ContactPrefer = styled.div`
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 16px;
+        font-size: 14px;
       }
     `
 
@@ -259,13 +259,13 @@ export const ContactPrefer = styled.div`
     background-color: #DDFF00;
     border-radius: 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     justify-content: space-evenly;
     align-items: center;
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 11px;
+        font-size: 14px;
         width: 145px;
         height: 30px;
         left: 460px;
@@ -295,7 +295,7 @@ export const ContactPrefer = styled.div`
     `
 
     export const DoneTitle = styled.h1`
-       font-size: 18px;
+       font-size: 16px;
        font-weight: 400;
        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        letter-spacing: 0.08em;
@@ -304,7 +304,7 @@ export const ContactPrefer = styled.div`
     `
 
     export const DoneText = styled.p`
-       font-size: 18px;
+       font-size: 16px;
        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        letter-spacing: 0.08em;
        width: 375px;
@@ -316,22 +316,18 @@ export const ContactPrefer = styled.div`
     background-color: #DDFF00;
     border-radius: 20px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.08em;
     padding: 15px;
     text-decoration: none;
 
     @media (min-width: 1024px) and (max-width: 1400px) {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     @media (min-width: 1401px) and (max-width: 1600px) {
-        font-size: 16px;
-      }
-
-    @media screen and (min-width: 1601px) {
         font-size: 18px;
-    }
+      }
     `
 
     export const DoneContainer = styled.p`

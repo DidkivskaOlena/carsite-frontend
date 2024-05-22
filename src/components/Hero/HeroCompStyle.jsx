@@ -33,7 +33,7 @@ export const MainTextContent = styled.div`
 `
 
 export const MainComment = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 20px;
   margin-left: 155px;
   margin-bottom: 81px;
@@ -43,7 +43,7 @@ export const MainComment = styled.p`
   font-weight: 500;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 105px;
     margin-bottom: 61px;
     width: 400px;
@@ -51,7 +51,7 @@ export const MainComment = styled.p`
 `
 
 export const Comment = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 20px;
   margin-left: 15px;
   line-height: 1.75;
@@ -59,7 +59,7 @@ export const Comment = styled.p`
   font-weight: 500;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `
 
@@ -96,21 +96,21 @@ export const HeroBoxTitle = styled.p`
 export const HeroBoxText = styled.p`
   color: #FFFFFF;
   font-family: 'SA Thousand';
-  font-size: 27px;
+  font-size: 20px;
   line-height: 2.66;
   display: inline-block;
   letter-spacing: 0.08em;
   margin-right: 10px;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 `
 
 export const HeroBoxTextSpan = styled.p`
   color: #DDFF00;
   font-family: 'SA Thousand';
-  font-size: 27px;
+  font-size: 20px;
   line-height: 2.66;
   display: inline-block;
   letter-spacing: 0.08em;
@@ -160,7 +160,7 @@ export const GridItem = styled.li`
 
 export const NavbarLink = styled(NavLink)`
   color: #000000;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 17px;
   text-decoration: none;
 
@@ -311,13 +311,13 @@ export const Modal = styled.div`
 
 export const ModalText = styled.div`
     font-family: "Jura", sans-serif;
-    font-size: 25px;
+    font-size: 18px;
     width: 916px;
     line-height: 1.8;
     margin: 39px auto;
   
     @media (min-width: 768px) and (max-width: 1439px) {
-      font-size: 22px;
+      font-size: 16px;
       width: 720px;
       margin: 29px auto;
     }
@@ -328,7 +328,7 @@ export const ButtonModal = styled.button`
   height: 112px;
   cursor: pointer;
   font-family: 'SA Thousand';
-  font-size: 20px;
+  font-size: 16px;
   line-height: 2;
   letter-spacing: 20%;
   margin-top: 73px;
@@ -340,13 +340,13 @@ export const ButtonModal = styled.button`
     margin-top: 53px;
     width: 486px;
     height: 92px;
-    font-size: 18px;
+    font-size: 16px;
   }
 `
 export const ButtonModalFaq = styled.a`
   cursor: pointer;
   font-family: 'SA Thousand';
-  font-size: 20px;
+  font-size: 16px;
   line-height: 2;
   letter-spacing: 20%;
   border-radius: 45px;
@@ -359,7 +359,7 @@ export const ButtonModalFaq = styled.a`
   left: 1vw;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 18px;
+    font-size: 14px;
     padding: 30px 70px;
   }
 `
