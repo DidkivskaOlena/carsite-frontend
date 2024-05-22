@@ -23,7 +23,7 @@ const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
-const SSL = lazy(() => import("./.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
+// const SSL = lazy(() => import("./.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
 
 function App() {
   const {t} = useTranslation()
@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<div>{t("loading")}</div>}>
           <Routes>
-            <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={<SSL/>}/>
+            <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={"../public/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"}/>
             <Route path="/" element={<SharedLayout/>}>
               <Route index element={<Home />}/>
               <Route path="/about" element={<About />} />
