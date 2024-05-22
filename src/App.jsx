@@ -1,5 +1,5 @@
 import './i18n';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation} from 'react-i18next';
 import {
   BrowserRouter,
   Route,
@@ -23,7 +23,7 @@ const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
-const SSL = lazy(() => import("../.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
+const SSL = lazy(() => import("./.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
 
 function App() {
   const {t} = useTranslation()
