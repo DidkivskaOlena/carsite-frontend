@@ -31,6 +31,7 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<div>{t("loading")}</div>}>
           <Routes>
+            <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={<SSL/>}/>
             <Route path="/" element={<SharedLayout/>}>
               <Route index element={<Home />}/>
               <Route path="/about" element={<About />} />
@@ -40,7 +41,6 @@ function App() {
               <Route path="/favorites" element={<Favorites/>}/>
               <Route path="/faq" element={<FAQ />} />
               <Route path="/contacts" element={<Contacts/>}/>
-              <Route path='/.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt' element={SSL}/>
               <Route path="/login" element={
                 <RestrictedRoute redirectTo="/admin" component={<LoginPage/>}/>
               }/>
