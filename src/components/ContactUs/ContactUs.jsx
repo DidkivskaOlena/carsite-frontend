@@ -2,7 +2,7 @@ import { ErrorMessage, Formik} from 'formik';
 import { ErrorBoundary } from "react-error-boundary";
 import * as Yup from "yup";
 import { t } from "i18next";
-import { ContactBackground, ContactButton, ContactComment, ContactContainer, ContactForm, ContactGrid, ContactGridItem, ContactImage, ContactInput, ContactItem1, ContactItem2, ContactItem3, ContactItem4, ContactItem5, ContactPrefer, ContactText, ContactTextarea, ContactTitle } from './ContactUsStyled.jsx';
+import { Address, ContactBackground, ContactButton, ContactComment, ContactContainer, ContactForm, ContactGrid, ContactGridItem, ContactImage, ContactInput, ContactItem1, ContactItem2, ContactItem3, ContactItem4, ContactItem5, ContactLink, ContactPrefer, ContactText, ContactTextLink, ContactTextarea, ContactTitle, ContactTitleContainer, ContactTitleSVG, ContactTitleText, LinkLocate, Locate, Map, MapContainer, MapTitle } from './ContactUsStyled.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendMail } from '../../redux/mail/operation.js';
 import { selectIsSending} from '../../redux/mail/selectors.js';
@@ -91,6 +91,36 @@ export function ContactUs() {
             </Formik>
             </ErrorBoundary>
             <ContactBackground></ContactBackground>
+            <MapContainer>
+                <Map>
+                    <img src="../../../public/map.jpg"></img>
+                    <LinkLocate href='https://www.google.com/maps/d/u/0/edit?mid=12Mu5kS4T3Re597SmVskG5tUB5b5dVh4&usp=sharing' target="_blank" rel="noopener noreferrer">
+                        <Locate src='../../../public/locate_gps_navigation_pin_point_location_icon-icons.com_59906 1.png'></Locate>
+                    </LinkLocate>
+                </Map>
+                <Address>
+                    <MapTitle>Contact us</MapTitle>
+                    <ul>
+                        <ContactLink >
+                            <ContactTitleContainer>
+                            <ContactTitleSVG src='../../../public/locate_gps_navigation_pin_point_location_icon-icons.com_59906 2.svg' width={22}></ContactTitleSVG>
+                                <ContactTitleText>Address</ContactTitleText>
+                            </ContactTitleContainer>
+                            <ContactTextLink href='https://www.google.com/maps/d/u/0/edit?mid=12Mu5kS4T3Re597SmVskG5tUB5b5dVh4&usp=sharing' target="_blank" rel="noopener noreferrer">Verre Weide 6 5, 4264KM Veen, Netherlands </ContactTextLink>
+                        </ContactLink>
+                        <ContactLink >
+                            <ContactTitleContainer>
+                                <ContactTitleSVG src="../../../public/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530 1.svg" alt=""  width={22}/>
+                                <ContactTitleText>Contact</ContactTitleText>
+                            </ContactTitleContainer>
+                            <ul>
+                                <li><ContactTextLink href="info.automaxgarage@gmal.com">info.automaxgarage@gmal.com</ContactTextLink></li>
+                                <li><ContactTextLink href="tel:+0629768160" >(0) 6 29 76 81 60</ContactTextLink></li>
+                            </ul>
+                        </ContactLink>
+                    </ul>
+                </Address>
+            </MapContainer>
         </ContactContainer>
     )
 }
