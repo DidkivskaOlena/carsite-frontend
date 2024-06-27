@@ -93,7 +93,7 @@ export function ContactUs() {
             <ContactBackground></ContactBackground>
             <MapContainer>
                 <Map>
-                    <img src="../../../public/map.jpg"></img>
+                    <img src="/map.jpg"></img>
                     <LinkLocate href='https://www.google.com/maps/d/u/0/edit?mid=12Mu5kS4T3Re597SmVskG5tUB5b5dVh4&usp=sharing' target="_blank" rel="noopener noreferrer">
                         <Locate src='/locate_gps_navigation_pin_point_location_icon-icons.com_59906 1.png'></Locate>
                     </LinkLocate>
