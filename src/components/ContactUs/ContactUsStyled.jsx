@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 export const ContactContainer = styled.div`
         text-align: center;
-        width: 100%;
-        height: 100%;
     `
 
 export const ContactForm = styled(Form)`
@@ -245,10 +243,24 @@ export const ContactPrefer = styled.div`
     export const ContactBackground = styled.div`
     background-color: black;
     width: 100%;
-    height: 36vh;
-    position: absolute;
-    bottom: 0;
+    height: 46vh;
+    position: relative;
     z-index: -2;
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        top: -175px;
+        height: 290px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px){
+        top: -240px;
+        height: 400px;
+    }
+
+    @media (min-width: 1601px){
+        top: -292px;
+        height: 470px;
+    }
     `
 
     export const ContactButton = styled.button`
@@ -335,4 +347,206 @@ export const ContactPrefer = styled.div`
        height: 100%;
        align-content: center;
     }
+    `
+
+    export const MapContainer = styled.div`
+        margin-top: -100px;
+        margin-bottom: 160px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            width: 682px;
+            height: 440px;
+            margin-top: -100px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+            width: 886px;
+            height: 570px;
+            margin-top: -150px;
+        }
+
+        @media (min-width: 1601px){
+            width: 1077px;
+            height: 695px;
+            margin-top: -190px;
+        }
+    `
+
+    export const Map = styled.div`
+        background-color: #C4C4C4;
+        border-radius: 20px;
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            width: 586px;
+            height: 440px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+            width: 762px;
+            height: 570px;
+        }
+
+        @media (min-width: 1601px){
+            width: 926px;
+            height: 695px;
+        }
+    `
+
+    export const Address = styled.div`
+        position: absolute;
+        top: 60px;
+        background-color: #000000;
+        right: 0;
+        border-radius: 20px;
+        padding: 55px;
+        text-align: start;
+        color: #FFFFFF;
+        font-family: "Jura", sans-serif;
+
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            width: 280px;
+            height: 310px;
+            padding: 30px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+            width: 360px;
+            height: 405px;
+            padding: 40px;
+        }
+
+        @media (min-width: 1601px){
+            width: 440px;
+            height: 496px;
+        }
+    `
+
+    export const LinkLocate = styled.a`
+        &:hover {
+            transform: scale(2);
+        }
+    `
+
+    export const Locate = styled.img`
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        transition: transform 1s cubic-bezier(0, 0.11, 0.35, 2);
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            top: 260px;
+            left: 260px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+            top: 360px;
+            left: 360px;
+        }
+
+        @media (min-width: 1601px){
+            top: 450px;
+            left: 450px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    `
+
+    export const MapTitle = styled.h2`
+        font-family: 'SA Thousand', 'Trebuchet MS', sans-serif;
+        letter-spacing: 0.08em;
+        font-weight: 400;
+        line-height: 1;
+
+         @media (min-width: 1024px) and (max-width: 1400px) {
+            font-size: 22px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+           font-size: 28px;
+        }
+
+        @media (min-width: 1601px){
+            font-size: 32px;
+        }
+    `
+
+    export const ContactLink = styled.li`
+        
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            line-height: 1.1;
+            margin-top: 45px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+           margin-top: 60px;
+        }
+
+        @media (min-width: 1601px){
+            margin-top: 75px;
+        }
+    `
+
+    export const ContactTitleContainer = styled.div`
+        display: flex;
+        margin-bottom: 9px;
+            align-items: flex-end;
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+           margin-bottom: 6px;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            margin-bottom: 2px;
+        }
+    `
+
+    export const ContactTitleSVG = styled.img`
+        width: 22px;
+        margin-right: 8px;
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            width: 16px;
+        }
+    `
+
+    export const ContactTitleText = styled.h5`
+        font-weight: 600
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            font-size: 14px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+           font-size: 16px;
+        }
+
+        @media (min-width: 1601px){
+            font-size: 18px;
+        }
+    `
+
+    export const ContactTextLink = styled.a`
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: 200;
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+           font-size: 14px;
+        }
+
+        @media (min-width: 1601px){
+            font-size: 16px;
+        }
     `
