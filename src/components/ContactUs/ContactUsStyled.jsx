@@ -351,7 +351,7 @@ export const ContactPrefer = styled.div`
 
     export const MapContainer = styled.div`
         margin-top: -100px;
-        margin-bottom: 160px;
+        margin-bottom: 90px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -549,4 +549,85 @@ export const ContactPrefer = styled.div`
         @media (min-width: 1601px){
             font-size: 16px;
         }
+    `
+
+    export const FaqContainer = styled.div`
+        padding: 0 215px 55px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            width: 682px;
+            height: 440px;
+        }
+
+        @media (min-width: 1401px) and (max-width: 1600px){
+            width: 886px;
+            height: 570px;
+        }
+
+        @media (min-width: 1601px){
+            width: 1077px;
+            height: 695px;
+        }
+    `
+
+    export const FaqTitle = styled.h2`
+    font-family: 'SA Thousand', 'Trebuchet MS', sans-serif;
+    line-height: 3;
+    letter-spacing: 0.08em;
+
+    @media (min-width: 1024px) and (max-width: 1400px){
+        font-size: 18px;
+        margin-top: 14px;
+        margin-bottom: 5px;
+    }
+    @media (min-width: 1401px) and (max-width: 1600px){
+        font-size: 24px;
+        margin-top: 18px;
+        margin-bottom: 5px;
+    }
+    @media (min-width: 1601px){
+        font-size: 27px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    `
+    export const FaqGrid = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: stretch;
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        grid-template-rows: 25px 6px 25px 30px;
+        gap: 15px 14px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        gap: 20px 18px;
+        grid-template-rows: 38px 8px 38px 48px;
+      }
+
+    @media screen and (min-width: 1601px) {
+        gap: 25px 20px;
+        grid-template-rows: 50px 10px 50px 60px;
+    }
+    `
+
+    export const FaqGridItem = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-weight: 600; */
+
+    @media (min-width: 1024px) and (max-width: 1400px) {
+        font-size: 14px;
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+        font-size: 16px;
+      }
     `

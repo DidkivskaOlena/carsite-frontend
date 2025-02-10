@@ -2,7 +2,7 @@ import { ErrorMessage, Formik} from 'formik';
 import { ErrorBoundary } from "react-error-boundary";
 import * as Yup from "yup";
 import { t } from "i18next";
-import { Address, ContactBackground, ContactButton, ContactComment, ContactContainer, ContactForm, ContactGrid, ContactGridItem, ContactImage, ContactInput, ContactItem1, ContactItem2, ContactItem3, ContactItem4, ContactItem5, ContactLink, ContactPrefer, ContactText, ContactTextLink, ContactTextarea, ContactTitle, ContactTitleContainer, ContactTitleSVG, ContactTitleText, LinkLocate, Locate, Map, MapContainer, MapTitle } from './ContactUsStyled.jsx';
+import { Address, ContactBackground, ContactButton, ContactComment, ContactContainer, ContactForm, ContactGrid, ContactGridItem, ContactImage, ContactInput, ContactItem1, ContactItem2, ContactItem3, ContactItem4, ContactItem5, ContactLink, ContactPrefer, ContactText, ContactTextLink, ContactTextarea, ContactTitle, ContactTitleContainer, ContactTitleSVG, ContactTitleText, FaqContainer, FaqGrid, FaqGridItem, FaqTitle, LinkLocate, Locate, Map, MapContainer, MapTitle } from './ContactUsStyled.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendMail } from '../../redux/mail/operation.js';
 import { selectIsSending} from '../../redux/mail/selectors.js';
@@ -121,6 +121,29 @@ export function ContactUs() {
                     </ul>
                 </Address>
             </MapContainer>
+            <FaqContainer>
+                <FaqTitle >{t(`menu.faq`)}</FaqTitle>
+                <FaqGrid>
+                    <FaqGridItem>
+                        <ContactItem1 htmlFor="name">{t(`contactus.name`)}*</ContactItem1>
+                    </FaGridItem>
+                    <FaGridItem>
+                        <ContactItem2 htmlFor="email" >EMAIL*</ContactItem2>
+                    </FaGridItem>
+                    <FaGridItem>
+                        <ContactItem3 htmlFor='phone' >{t(`contactus.phone`)}*</ContactItem3>
+                    </FaGridItem>
+                    <FaGridItem>
+                        <ContactItem1 htmlFor="name">{t(`contactus.name`)}*</ContactItem1>
+                    </FaGridItem>
+                    <FaGridItem>
+                        <ContactItem2 htmlFor="email" >EMAIL*</ContactItem2>
+                    </FaGridItem>
+                    <FaGridItem>
+                        <ContactItem3 htmlFor='phone' >{t(`contactus.phone`)}*</ContactItem3>
+                    </FaGridItem>
+                </FaqGrid>
+            </FaqContainer>
         </ContactContainer>
     )
 }
