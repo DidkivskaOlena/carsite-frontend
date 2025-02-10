@@ -19,7 +19,8 @@ const Hero = () => {
         <MainText>
           <img src="automaxgarage.svg"/>
         </MainText>
-        <MainTextContent></MainTextContent>
+        <MainTextContent>
+        </MainTextContent>
       </Main>
       <MainComment>{t(`hero.definition`)}</MainComment>
       <Comment>{t(`hero.question`)}</Comment>

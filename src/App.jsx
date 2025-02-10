@@ -11,8 +11,6 @@ import AdminPage from "./pages/Admin/AdminPage";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
 
-
-
 const Home = lazy(() => import("./pages/Home/Home"))
 const About = lazy(() => import("./pages/About/About"))
 const Services = lazy(() => import("./pages/Services/ServicePage"))
@@ -23,6 +21,7 @@ const FAQ = lazy(()=> import("./pages/FAQ/FAQPage"))
 const Contacts = lazy(()=> import("./pages/Contacts/ContactPage"))
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"))
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"))
+
 // const SSL = lazy(() => import("./.well-known/pki-validation/07E4A60A6388BB85ED197D98FE8AA1D1.txt"))
 
 function App() {

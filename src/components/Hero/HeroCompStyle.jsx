@@ -1,6 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import {} from "../../styles/theme";
 
 export const HeroContainer = styled.div`
     background: #F5F5F5;
@@ -81,7 +82,7 @@ export const HeroBox = styled.div`
 `
 
 export const HeroBoxTitle = styled.p`
-  color: #DDFF00;
+  color: ${(props) => props.theme.colors.accent};
   font-family: 'SA Thousand';
   font-size: 69px;
   line-height: 1.2;

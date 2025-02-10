@@ -1,17 +1,15 @@
 export const theme = {
   colors: {
     white: "rgba(255, 255, 255, 1)",
-    black: "rgba(17, 17, 17, 1)",
-    accent: "rgba(245, 146, 86, 1)",
-    hover: "rgba(255, 113, 47, 1)",
-    background: "rgba(245, 245, 245, 1)",
-    mainText: "rgba(47, 48, 64, 1)",
-    pageTitleText: "rgba(24, 28, 39, 1)",
-    searchText: "rgba(83, 83, 83, 1)",
-    newsText: "rgba(17, 19, 33, 1)",
-    muted: "rgba(17, 17, 17, 0.6)",
-    active: "rgba(255, 97, 1, 1)",
-    shadow: "rgba(49, 21, 4, 0.07)",
+    mainText: "rgba(11, 7, 7, 1)",
+    accent: "rgba(221, 255, 0, 1)",
+    background: "rgba(240, 240, 240, 1)",
+    secondBackground: "rgba(119, 113, 101, 1)",
+    serviceBackground: "rgba(32, 32, 32, 1)",
+    componentBackground: "rgba(45, 45, 45, 1)",
+    imgBackground: "rgba(217, 217, 217, 1)",
+    comment: "rgba(94, 94, 94, 1)",
+    getintouchBackground: "rgba(203, 200, 194, 1)",
   },
 
   media: {
@@ -21,31 +19,43 @@ export const theme = {
     desktop: "(min-width: 1280px)",
   },
 
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
-
-  fontSizes: {
-    xxs: "12px",
+  fontSizesMobile: {
     xs: "14px",
     s: "16px",
     xxm: "18px",
     xm: "20px",
-    m: "24px",
-    l: "28px",
-    xl: "32px",
+    m: "22px",
+    l: "24px",
+    xl: "28px",
     xxl: "36px",
     xxxl: "48px",
     bodyPositiveSize: "68px",
   },
 
+  fontSizesDesktop: {
+    xs: "14px",
+    s: "16px",
+    xxm: "18px",
+    xm: "24px",
+    m: "28px",
+    l: "32px",
+    xl: "36px",
+    xxl: "42px",
+  },
+
   fontWeights: {
     normal: 400,
-    semiBold: 500,
+    medium: 500,
+    semiBold: 600,
     bold: 700,
   },
 
   lineHeights: {
-    body: 1.36,
-    title: 1.36,
+    one: 1,
+    two: 1.2,
+    three: 1.3,
+    four: 1.4,
+    body: 1.5,
   },
 
   borders: {
