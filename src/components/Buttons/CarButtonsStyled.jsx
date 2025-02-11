@@ -7,7 +7,7 @@ export const PrimaryContainer = styled.a`
     width: 182px;
     height: 52px;
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-    padding: 8px;
+    padding: 19px 8px 19px 23px;
     text-decoration: none;
     position: relative;
     display: flex;
@@ -28,6 +28,140 @@ export const PrimaryContainer = styled.a`
   }
 `;
 
+export const SecondaryContainer = styled.a`
+    border: ${(props) => (props.disabled ? '1.50px solid #d9d9d9' : '1.50px solid #fff')};
+    border-radius: 60px;
+    width: 182px;
+    height: 52px;
+    cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+    padding: 19px 23px;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: border 0.4s;
+
+    &:hover {
+        border: ${(props) => !props.disabled && '1.50px solid #df0'};
+    }
+
+    &:hover .title {
+        color: ${(props) => !props.disabled && props.theme.colors.accent};
+    }
+
+    &:active {
+        background: ${(props) => !props.disabled && props.theme.colors.accent};
+        border: ${(props) => !props.disabled && props.theme.colors.accent};
+    }
+
+    &:active .title {
+        color: ${(props) => !props.disabled && props.theme.colors.mainText};
+    }
+`;
+
+export const ServicesContainer = styled.a`
+    border-radius: 10px;
+    padding: 20px;
+    width: 170px;
+    height: 150px;
+    background:${(props) => props.theme.colors.mainText};
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &:active .page_arrow {
+        background: ${(props) => props.theme.colors.accent};
+        transform: rotate(-45deg);
+    }
+
+    &:hover .page_arrow {
+        border: 1.50px solid #DDFF00;;
+    }
+
+    &:hover path {
+            fill: ${(props) => props.theme.colors.accent}
+    }
+
+    &:active path {
+            fill: ${(props) => props.theme.colors.mainText}
+    }
+`;
+
+export const FaqContainer = styled.a`
+    border-radius: 10px;
+    border: 1px solid #0b0707;
+    padding: 20px;
+    width: 170px;
+    height: 150px;
+    background:${(props) => props.theme.colors.background};
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &:active .faq_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+        transform: rotate(-45deg);
+    }
+
+    &:hover .faq_arrow {
+        border: 1.50px solid #0B0707;
+        background: ${(props) => props.theme.colors.mainText};
+    }
+
+    &:hover path {
+            fill: ${(props) => props.theme.colors.white}
+    }
+
+    &:active path {
+            fill: ${(props) => props.theme.colors.accent}
+    }
+`;
+
+export const ContactContainer = styled.a`
+    border: 1px solid #0b0707;
+    border-radius: 10px;
+    padding: 20px;
+    width: 170px;
+    height: 150px;
+    background: url(/contactback.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &:active .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+        transform: rotate(-45deg);
+    }
+
+    &:hover .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+    }
+
+    &:hover path {
+            fill: ${(props) => props.theme.colors.white}
+    }
+
+    &:active path {
+            fill: ${(props) => props.theme.colors.accent}
+    }
+`;
+
 export const Title = styled.div`
     font-family: "Jura", sans-serif;;
     font-weight: ${(props) => props.theme.fontWeights.semiBold};
@@ -38,7 +172,29 @@ export const Title = styled.div`
     margin-left: auto;
     margin-right: auto;
 
-    transition: color 0.5s;
+    transition: color 0.4s;
+`;
+
+export const ServicesTitle = styled.div`
+    margin-right: auto;
+    font-family: "Jura", sans-serif;
+    text-transform: uppercase;
+    font-weight: ${(props) => props.theme.fontWeights.bold};
+    font-size: ${(props) => props.theme.fontSizesDesktop.s};
+    line-height: ${(props) => props.theme.lineHeights.one};
+    color: ${(props) => props.theme.colors.titleText};
+
+`;
+
+export const PrimaryTitle = styled.div`
+    margin-right: auto;
+    font-family: "Jura", sans-serif;
+    text-transform: uppercase;
+    font-weight: ${(props) => props.theme.fontWeights.bold};
+    font-size: ${(props) => props.theme.fontSizesDesktop.s};
+    line-height: ${(props) => props.theme.lineHeights.one};
+    color: ${(props) => props.theme.colors.mainText};
+
 `;
 
 export const Arrow = styled.div`
@@ -47,6 +203,27 @@ export const Arrow = styled.div`
     height: 36px;
     border-radius: 50%;
     padding: 7px;
+    margin-left: 10px;
+
+    transition: transform 0.4s, background 0.5s;
+`
+
+export const PageArrow = styled.div`
+    border: 1.50px solid #F5F5F5;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 4px 6px;
+
+    transition: transform 0.4s, background 0.5s;
+`
+
+export const PrimaryArrow = styled.div`
+    border: 1.50px solid #0B0707;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 4px 6px;
 
     transition: transform 0.4s, background 0.5s;
 `

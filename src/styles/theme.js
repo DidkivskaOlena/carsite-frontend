@@ -2,6 +2,7 @@ export const theme = {
   colors: {
     white: "rgba(255, 255, 255, 1)",
     mainText: "rgba(11, 7, 7, 1)",
+    titleText: "rgba(245, 245, 245, 1)",
     accent: "rgba(221, 255, 0, 1)",
     background: "rgba(240, 240, 240, 1)",
     secondBackground: "rgba(119, 113, 101, 1)",

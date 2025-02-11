@@ -1,6 +1,7 @@
 import { t } from "i18next";
 import { ButtonBox, ButtonModal, Comment, Grid, GridItem, HeroBox, HeroBoxText, HeroBoxTextSpan, HeroBoxTitle, HeroContainer, ImgCatalogue, Main, MainComment, MainText, MainTextContent, MenuBox, MenuBoxBorder, MenuBoxCatalogue, MenuBoxCatalogueNav, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, Modal, ModalText, NavbarLink} from "./HeroCompStyle";
 import { useState} from "react";
+import {ContactButton, FaqButton, PrimaryButton, SecondaryButton, ServicesButton} from "../Buttons/CarButtons";
 
 const Hero = () => {
 
@@ -20,6 +21,11 @@ const Hero = () => {
           <img src="automaxgarage.svg"/>
         </MainText>
         <MainTextContent>
+          {/* <PrimaryButton title={"Primary Button"}></PrimaryButton>
+          <SecondaryButton title={"Secondary Button"}></SecondaryButton> */}
+          {/* <ServicesButton></ServicesButton> */}
+          {/* <FaqButton></FaqButton>
+          <ContactButton></ContactButton> */}
         </MainTextContent>
       </Main>
       <MainComment>{t(`hero.definition`)}</MainComment>
