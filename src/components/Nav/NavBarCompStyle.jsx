@@ -1,48 +1,44 @@
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
-
-export const NavbarContainer = styled.nav`
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: #F5F5F5;
-`;
+import {} from "../../styles/theme";
 
 export const Header = styled.nav`
-  background-color: #F5F5F5;
   display: flex;
-  flex-direction: column;
+  
 
-  @media (min-width: 768px) {
-    padding-top: 17px;
-    align-items: end;
+@media (${(props) => props.theme.media.tablet}) {
+    max-width: 1240px;
+    height: 48px;
+    margin: 15px auto 24px;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 50%;
-    width: ${props => props.theme.whole}
 }
+`;
 
-  @media (min-width: 1024px) and (max-width: 1600px) {
-    padding-top: 12px;
+export const NavLinkContainer = styled.div`
+`
+
+export const NavbarLink = styled(NavLink)`
+  color: #000000;
+  font-size: 16px;
+  line-height: 17px;
+  text-decoration: none;
+
+  &:not(:last-of-type) {
+    margin-right: 40px;
   }
 `;
 
 export const NavText = styled.div`
   letter-spacing: 0.08em;
   align-items: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 25px;
+  font-family: "Jura", sans-serif;;
+  font-size: ${(props) => props.theme.fontSizesDesktop.xs};
+  font-weight: ${(props) => props.theme.fontWeights.medium};
+  color: ${(props) => props.theme.colors.mainText};
+  display: inline-block;
 
-  @media (min-width: 1024px) and (max-width: 1400px) {
-    font-size: 10px;
-    margin-bottom: 17px;
-}
-
-  @media (min-width: 1401px) and (max-width: 1600px) {
-    font-size: 12px;
-    margin-bottom: 22px;
-  }
 `
 
 export const LogoContainer = styled(Link)`
@@ -53,18 +49,14 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  width: 235px;
-  height: 75px;
+  width: 130px;
+  height: 40px;
 
-  @media (min-width: 1024px) and (max-width: 1400px) {
-    width: 160px;
-  height: 51px;
-}
-
-  @media (min-width: 1401px) and (max-width: 1600px) {
-    width: 205px;
-  height: 66px;
+  @media (${(props) => props.theme.media.tablet}) {
+    width: 130px;
+    height: 40px;
   }
+
 `;
 
 export const AuthContainer = styled.div`
@@ -124,20 +116,24 @@ export const LoginButtonStyled = styled(NavLink)`
 `;
 
 export const LangContainer = styled.div`
-  margin-bottom: 5px;
+  border-radius: 24px;
+  width: 196px;
+  height: 48px;
+
+  padding: 6px 7px;
+
+  background: ${(props) => props.theme.colors.langContainer};
 `
 
 export const LangButton = styled.button`
   font-size: 1vw;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #000000;
-  margin-right: 25px;
+  font-family: "Jura", sans-serif;
+  font-size: ${(props) => props.theme.fontSizesDesktop.xs};
+  font-weight: ${(props) => props.theme.fontWeights.semiBold};
+  color: ${(props) => props.theme.colors.mainText};
+  letter-spacing: 0.08em;
   border-radius: 50%;
   border: none;
-  height: 35px;
-
-  @media (min-width: 1024px) and (max-width: 1600px) {
-   
-    height: 2vw;
-}
+  height: 36px;
+  width: 36px;
 `

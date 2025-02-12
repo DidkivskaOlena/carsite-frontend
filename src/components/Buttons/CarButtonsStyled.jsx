@@ -75,6 +75,17 @@ export const ServicesContainer = styled.a`
     justify-content: space-between;
     flex-direction: column;
 
+    @media (${(props) => props.theme.media.tablet}) {
+        border-radius: 10px;
+        padding: 20px;
+        width: 302px;
+        height: 250px;
+        
+        align-items: end;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
     &:active .page_arrow {
         background: ${(props) => props.theme.colors.accent};
         transform: rotate(-45deg);
@@ -107,6 +118,17 @@ export const FaqContainer = styled.a`
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
+
+    @media (${(props) => props.theme.media.tablet}) {
+        border-radius: 10px;
+        padding: 20px;
+        width: 302px;
+        height: 250px;
+        
+        align-items: end;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 
     &:active .faq_arrow {
         background: ${(props) => props.theme.colors.mainText};
@@ -143,6 +165,17 @@ export const ContactContainer = styled.a`
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
+
+    @media (${(props) => props.theme.media.tablet}) {
+        border-radius: 10px;
+        padding: 20px;
+        width: 302px;
+        height: 250px;
+        
+        align-items: end;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 
     &:active .contact_arrow {
         background: ${(props) => props.theme.colors.mainText};

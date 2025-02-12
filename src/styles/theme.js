@@ -2,9 +2,11 @@ export const theme = {
   colors: {
     white: "rgba(255, 255, 255, 1)",
     mainText: "rgba(11, 7, 7, 1)",
+    mainTextTransp: "rgba(11, 7, 7, 0.8)",
     titleText: "rgba(245, 245, 245, 1)",
     accent: "rgba(221, 255, 0, 1)",
     background: "rgba(240, 240, 240, 1)",
+    langContainer: "rgba(227, 227, 227, 1)",
     secondBackground: "rgba(119, 113, 101, 1)",
     serviceBackground: "rgba(32, 32, 32, 1)",
     componentBackground: "rgba(45, 45, 45, 1)",
@@ -18,6 +20,11 @@ export const theme = {
     mobileMax: "(max-width: 767px)",
     tablet: "(min-width: 768px)",
     desktop: "(min-width: 1280px)",
+  },
+
+  font: {
+    fontFamily: `"Jura", sans-serif`,
+    secondFamily: `"SA Thousand", sans-serif`,
   },
 
   fontSizesMobile: {
@@ -38,6 +45,7 @@ export const theme = {
     s: "16px",
     xxm: "18px",
     xm: "24px",
+    mm: "26px",
     m: "28px",
     l: "32px",
     xl: "36px",

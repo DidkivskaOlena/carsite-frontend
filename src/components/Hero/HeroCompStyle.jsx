@@ -4,122 +4,111 @@ import styled from "styled-components";
 import {} from "../../styles/theme";
 
 export const HeroContainer = styled.div`
-    background: #F5F5F5;
-    margin-left: 20px;
-    margin-right: 20px;
+    background: ${(props) => props.theme.colors.background};
+    width: 1240px;
+    height: 653px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+`
+
+export const TopRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 `;
 
 export const Main = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center
+  width: 440px;
+  margin: auto 0;
 `
 
-export const MainText = styled.div`
-  display: flex;
-  width: 30%;
-  padding: 24px;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  margin-top: 45px;
+export const Title = styled.h1`
+  line-height: ${(props) => props.theme.lineHeights.one};
+  font-family: ${(props) => props.theme.font.fontFamily};
+  font-size: ${(props) => props.theme.fontSizesDesktop.xxl};
+  font-weight: ${(props) => props.theme.fontWeights.semiBold};
+  color: ${(props) => props.theme.colors.mainText};
 `
 
-export const MainTextContent = styled.div`
-  margin-left: 30px;
-  margin-top: 40px;
-  width: 62px;
-  height: 2px;
-  background-color: #000000;
-  display: block;
-`
-
-export const MainComment = styled.p`
-  font-size: 16px;
+export const MainTextContent = styled.p`
+  text-align: justify;
   margin-top: 20px;
-  margin-left: 155px;
-  margin-bottom: 81px;
-  width: 500px;
-  line-height: 1.75;
-  font-family: "Jura", sans-serif;
-  font-weight: 500;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 14px;
-    margin-left: 105px;
-    margin-bottom: 61px;
-    width: 400px;
-  }
-`
-
-export const Comment = styled.p`
-  font-size: 16px;
-  margin-bottom: 20px;
-  margin-left: 15px;
-  line-height: 1.75;
-  font-family: "Jura", sans-serif;
-  font-weight: 500;
-
-  @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 14px;
-  }
+  line-height: ${(props) => props.theme.lineHeights.two};
+  font-family: ${(props) => props.theme.font.fontFamily};
+  font-size: ${(props) => props.theme.fontSizesDesktop.xxm};
+  font-weight: ${(props) => props.theme.fontWeights.normal};
+  color: ${(props) => props.theme.colors.mainTextTransp};
 `
 
 export const HeroBox = styled.div`
+  position: relative;
+
+  border-radius: 10px;
+  width: 615px;
+  height: 393px;
+
+  background: ${(props) => props.theme.colors.componentBackground};
+`
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+export const Overlay = styled.div`
   position: absolute;
-  padding: 30px;
-  top: 20px;
-  right: 20px;
-  height: 67vh;
-  left: 50%;
-  background: #000000;
-  border-radius: 20px;
-  border: 1px solid #000000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(11, 7, 7, 0) 0%, #0b0707 100%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+`;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
-    top: 15px;
-    right: 15px;
-  }
-`
-
-export const HeroBoxTitle = styled.p`
-  color: ${(props) => props.theme.colors.accent};
-  font-family: 'SA Thousand';
-  font-size: 69px;
-  line-height: 1.2;
-  display: inline-block;
-  letter-spacing: 0.08em;
-
-  @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 54px;
-  }
-`
+export const TextContainer = styled.div`
+  width: 440px;
+`;
 
 export const HeroBoxText = styled.p`
-  color: #FFFFFF;
-  font-family: 'SA Thousand';
-  font-size: 20px;
-  line-height: 2.66;
-  display: inline-block;
-  letter-spacing: 0.08em;
-  margin-right: 10px;
-
-  @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 14px;
-  }
+  text-transform: uppercase;
+  font-family: ${(props) => props.theme.font.secondFamily};
+  font-size: ${(props) => props.theme.fontSizesDesktop.xl};
+  font-weight: ${(props) => props.theme.fontWeights.medium};
+  color: ${(props) => props.theme.colors.accent};
+  line-height: ${(props) => props.theme.lineHeights.one};
 `
 
 export const HeroBoxTextSpan = styled.p`
-  color: #DDFF00;
-  font-family: 'SA Thousand';
-  font-size: 20px;
-  line-height: 2.66;
   display: inline-block;
-  letter-spacing: 0.08em;
-  margin-right: 10px;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
-    font-size: 18px;
-  }
+  margin-right: 8px;
+
+  font-family: ${(props) => props.theme.font.fontFamily};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
+  font-size: ${(props) => props.theme.fontSizesDesktop.mm};
+  text-transform: uppercase;
+  color:${(props) => props.theme.colors.titleText};
+`
+
+export const HeroBoxButtonContainer = styled.div`
+  width: 120px;
+  height: 120px;
+`
+
+export const BottomRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 `
 
 export const MenuContainer = styled.div`

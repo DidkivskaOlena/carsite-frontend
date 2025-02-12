@@ -1,7 +1,7 @@
 import { t } from "i18next";
-import { ButtonBox, ButtonModal, Comment, Grid, GridItem, HeroBox, HeroBoxText, HeroBoxTextSpan, HeroBoxTitle, HeroContainer, ImgCatalogue, Main, MainComment, MainText, MainTextContent, MenuBox, MenuBoxBorder, MenuBoxCatalogue, MenuBoxCatalogueNav, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, Modal, ModalText, NavbarLink} from "./HeroCompStyle";
+import { BottomRow, ButtonBox, ButtonModal, Grid, GridItem, HeroBox, HeroBoxButtonContainer, HeroBoxText, HeroBoxTextSpan, HeroContainer, Image, ImgCatalogue, Main, MainTextContent, MenuBox, MenuBoxBorder, MenuBoxCatalogue, MenuBoxCatalogueNav, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, Modal, ModalText, NavbarLink, Overlay, TextContainer, Title, TopRow} from "./HeroCompStyle";
 import { useState} from "react";
-import {ContactButton, FaqButton, PrimaryButton, SecondaryButton, ServicesButton} from "../Buttons/CarButtons";
+import {AuctionButton, ContactButton, FaqButton, PrimaryButton, SecondaryButton, ServicesButton} from "../Buttons/CarButtons";
 
 const Hero = () => {
 
@@ -16,35 +16,37 @@ const Hero = () => {
 
   return (
     <HeroContainer >
-      <Main>
-        <MainText>
-          <img src="automaxgarage.svg"/>
-        </MainText>
-        <MainTextContent>
-          {/* <PrimaryButton title={"Primary Button"}></PrimaryButton>
-          <SecondaryButton title={"Secondary Button"}></SecondaryButton> */}
-          {/* <ServicesButton></ServicesButton> */}
-          {/* <FaqButton></FaqButton>
-          <ContactButton></ContactButton> */}
-        </MainTextContent>
-      </Main>
-      <MainComment>{t(`hero.definition`)}</MainComment>
-      <Comment>{t(`hero.question`)}</Comment>
-      <Comment>{t(`hero.definition`)}</Comment>
-      <HeroBox>
-        <HeroBoxTitle>DISCO</HeroBoxTitle>
-        <HeroBoxTitle>VER</HeroBoxTitle>
-        <HeroBoxText> OUR</HeroBoxText>
-        <HeroBoxTextSpan> BMV </HeroBoxTextSpan>
-        <HeroBoxText>PROGRAMMING <br/> SERVICES</HeroBoxText>
-        <MenuBoxBorder>
-          <div><img src="/border-button.png"/></div>
-        </MenuBoxBorder>
-        <MenuBox>
-          <ButtonBox><img src="/bluearrow.png" width={36}/></ButtonBox>
-        </MenuBox>
-      </HeroBox>
-      <MenuContainer >
+      <TopRow>
+        <Main>
+          <Title>{t(`hero.title`)}</Title>
+          <MainTextContent>{t(`hero.definition`)}</MainTextContent>
+        </Main>
+        <HeroBox>
+          <Image src="/carfromauction.jpg"/>
+          <Overlay>
+            <TextContainer>
+              <HeroBoxText>{t(`hero.text`)}</HeroBoxText>
+              <HeroBoxText><HeroBoxTextSpan>{t(`hero.span`)}</HeroBoxTextSpan>{t(`hero.textnext`)}</HeroBoxText>
+              <HeroBoxTextSpan>{t(`hero.spannext`)}</HeroBoxTextSpan>
+            </TextContainer>
+            <HeroBoxButtonContainer> 
+              {/* <MenuBoxBorder>
+                <div><img src="/border-button.png"/></div>
+              </MenuBoxBorder> */}
+              {/* <MenuBox>
+                <ButtonBox><img src="/bluearrow.png" width={36}/></ButtonBox>
+              </MenuBox> */}
+            </HeroBoxButtonContainer>
+          </Overlay>
+        </HeroBox>
+      </TopRow>
+      <BottomRow>
+        <ServicesButton></ServicesButton>
+        <FaqButton></FaqButton>
+        <ContactButton></ContactButton>
+        <ContactButton></ContactButton>
+      </BottomRow>
+      {/* <MenuContainer >
         <Grid container spacing={3} alignItems="stretch">
             <GridItem item xs={3}>
               <NavbarLink 
@@ -108,15 +110,15 @@ const Hero = () => {
               </NavbarLink>
             </GridItem>
         </Grid>
-      </MenuContainer>
-      {modal && (
+      </MenuContainer> */}
+      {/* {modal && (
         <Modal>
           <ModalText>{t(`modal.greetings`)}</ModalText>
           <ModalText>{t(`modal.conditions`)}</ModalText>
           <ModalText>{t(`modal.request`)}</ModalText>
             <ButtonModal onClick={handleModalClose}>{t(`modal.btn`)}</ButtonModal>
         </Modal>
-      ) }
+      ) } */}
     </HeroContainer>
   );
 }

@@ -27,8 +27,12 @@ i18n
             contact: "CONTACT US",
           },
           hero: {
-            definition: "MULTIBRAND CAR SERVICE AND REPAIR",
-            question: "WHY US?"
+            title: "AUTOMAX GARAGE — MULTIBRAND CAR SERVICE AND REPAIR",
+            definition: "We develop and implement software for BMW vehicles, ensuring top performance, reliability, and comfort.",
+            text:"find your",
+            span: "perfect",
+            textnext: "car",
+            spannext: "at the best deal"
           },
           modal: {
             greetings: "DEAR USER!",
@@ -63,8 +67,12 @@ i18n
             contact: "КОНТАКТИ"
           },
           hero: {
-            definition: "МУЛЬТИБРЕНДОВЕ ОБСЛУГОВУВАННЯ ТА РЕМОНТ АВТО",
-            question: "ЧОМУ МИ?"
+            title: "АВТОМАКС ГАРАЖ — МУЛЬТИБРЕНДОВИЙ СЕРВІС ТА РЕМОНТ АВТОМОБІЛІВ",
+            definition: "Ми розробляємо та впроваджуємо програмне забезпечення для автомобілів BMW, що забезпечує максимальну продуктивність, надійність та комфорт.",
+            text:"знайди свій",
+            span: "ідеальний",
+            textnext: "автомобіль",
+            spannext: "за найкращою ціною"
           },
           modal: {
             greetings: "ШАНОВНИЙ КОРИСТУВАЧ!",
@@ -99,8 +107,12 @@ i18n
             contact: "КОНТАКТЫ",
           },
           hero: {
-            definition: "МУЛЬТИБРЕНДОВЫЙ АВТОСЕРВИС И РЕМОНТ",
-            question: "ПОЧЕМУ МЫ?"
+            title: "АВТОМАКС ГАРАЖ — МУЛЬТИБРЕНДОВЫЙ СЕРВИС И РЕМОНТ АВТОМОБИЛЕЙ",
+            definition: "Мы разрабатываем и внедряем программное обеспечение для автомобилей BMW, гарантируя высочайшую производительность, надежность и комфорт.",
+            text:"найдите свой",
+            span: "идеальный",
+            textnext: "автомобиль",
+            spannext: "по лучшей цене"
           },
           modal: {
             greetings: "ДОРОГОЙ ПОЛЬЗОВАТЕЛЬ!",
@@ -135,8 +147,12 @@ i18n
             contact: "KONTAKTIERE UNS"
           },
           hero: {
-            definition: "SERVICE UND REPARATUR VON MEHRMARKENFAHRZEUGEN",
-            question: "WARUM WIR?"
+            title: "AUTOMAX GARAGE — MEHRMARKEN-AUTODIENST UND -REPARATUR",
+            definition: "Wir entwickeln und implementieren Software für BMW Fahrzeuge und sorgen so für höchste Leistung, Zuverlässigkeit und Komfort.",
+            text:"Finden Sie Ihr",
+            span: "perfektes",
+            textnext: "Auto",
+            spannext: "zum besten Preis"
           },
           modal: {
             greetings: "LIEBER NUTZER!",
@@ -171,8 +187,12 @@ i18n
             contact: "CONTACTEN"
           },
           hero: {
-            definition: "MULTIMERK AUTOSERVICE EN REPARATIE",
-            question: "WAAROM WIJ?"
+            title: "AUTOMAX GARAGE — MULTIBRAND AUTOSERVICE EN REPARATIE",
+            definition: "Wij ontwikkelen en implementeren software voor BMW-voertuigen, waarmee we topprestaties, betrouwbaarheid en comfort garanderen.",
+            text:"vind uw",
+            span: "perfecte",
+            textnext: "auto",
+            spannext: "tegen de beste deal"
           },
           modal: {
             greetings: "BESTE GEBRUIKER!",
