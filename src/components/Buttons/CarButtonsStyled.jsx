@@ -195,6 +195,37 @@ export const ContactContainer = styled.a`
     }
 `;
 
+export const AuctionContainer = styled.a`
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+    padding: 7px;
+
+    @media (${(props) => props.theme.media.tablet}) {
+        width: 120px;
+        height: 120px;
+
+    }
+
+    &:active .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+        transform: rotate(-45deg);
+    }
+
+    &:hover .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+    }
+
+    &:hover path {
+            fill: ${(props) => props.theme.colors.white}
+    }
+
+    &:active path {
+            fill: ${(props) => props.theme.colors.accent}
+    }
+`;
+
 export const Title = styled.div`
     font-family: "Jura", sans-serif;;
     font-weight: ${(props) => props.theme.fontWeights.semiBold};
@@ -230,6 +261,22 @@ export const PrimaryTitle = styled.div`
 
 `;
 
+export const AuctionTitle = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center; /* По центру по горизонталі */
+    align-items: center; /* По центру по вертикалі */
+    // width: 100%; /* Ширина контейнера */
+    // height: 100%; /* Висота контейнера */
+
+    @media (${(props) => props.theme.media.tablet}) {
+       bottom: 6px;
+        right: 6px;
+    }
+
+    animation: loading 15s linear infinite;
+`;
+
 export const Arrow = styled.div`
     background: ${(props) => (props.disabled ? props.theme.colors.imgBackground : props.theme.colors.white) };
     width: 36px;
@@ -259,4 +306,18 @@ export const PrimaryArrow = styled.div`
     padding: 4px 6px;
 
     transition: transform 0.4s, background 0.5s;
+`
+
+export const AuctionArrow = styled.div`
+
+    position: absolute;
+    z-index: 2;
+    
+
+    transition: transform 0.4s, background 0.5s;
+
+    @media (${(props) => props.theme.media.tablet}) {
+        top: 48px;
+        left: 48px;
+    }
 `

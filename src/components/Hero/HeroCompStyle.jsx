@@ -70,7 +70,7 @@ export const Overlay = styled.div`
   background: linear-gradient(180deg, rgba(11, 7, 7, 0) 0%, #0b0707 100%);
   border-radius: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
 `;
@@ -100,10 +100,15 @@ export const HeroBoxTextSpan = styled.p`
   color:${(props) => props.theme.colors.titleText};
 `
 
-export const HeroBoxButtonContainer = styled.div`
-  width: 120px;
-  height: 120px;
-`
+// export const HeroBoxButtonContainer = styled.div`
+//   width: 120px;
+//   height: 120px;
+
+//   display: flex;
+//   justify-content: center; 
+//   align-items: center; 
+//   height: 100vh; 
+// `
 
 export const BottomRow = styled.div`
   display: grid;
