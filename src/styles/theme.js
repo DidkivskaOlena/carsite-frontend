@@ -44,6 +44,7 @@ export const theme = {
     xs: "14px",
     s: "16px",
     xxm: "18px",
+    xmm: "22px",
     xm: "24px",
     mm: "26px",
     m: "28px",

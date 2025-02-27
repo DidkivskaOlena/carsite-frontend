@@ -1,7 +1,7 @@
 import { t } from "i18next";
 import { BottomRow, ButtonBox, ButtonModal, Grid, GridItem, HeroBox, HeroBoxText, HeroBoxTextSpan, HeroContainer, Image, ImgCatalogue, Main, MainTextContent, MenuBox, MenuBoxBorder, MenuBoxCatalogue, MenuBoxCatalogueNav, MenuBoxContact, MenuBoxFaq, MenuBoxServices, MenuContainer, MenuText, Modal, ModalText, NavbarLink, Overlay, TextContainer, Title, TopRow} from "./HeroCompStyle";
 import { useState} from "react";
-import {AuctionButton, ContactButton, FaqButton, PrimaryButton, SecondaryButton, ServicesButton} from "../Buttons/CarButtons";
+import {AuctionButton, CatalogueButton, ContactButton, FaqButton, PrimaryButton, SecondaryButton, ServicesButton} from "../Buttons/CarButtons";
 
 const Hero = () => {
 
@@ -35,8 +35,8 @@ const Hero = () => {
       </TopRow>
       <BottomRow>
         <ServicesButton></ServicesButton>
+        <CatalogueButton></CatalogueButton>
         <FaqButton></FaqButton>
-        <ContactButton></ContactButton>
         <ContactButton></ContactButton>
       </BottomRow>
       {/* <MenuContainer >

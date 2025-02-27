@@ -195,6 +195,52 @@ export const ContactContainer = styled.a`
     }
 `;
 
+export const CatalogueContainer = styled.a`
+    border: 1.5px solid #0b0707;
+    border-radius: 10px;
+    padding: 20px;
+    width: 170px;
+    height: 150px;
+    background: url(/buttoncatalog.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (${(props) => props.theme.media.tablet}) {
+        border-radius: 10px;
+        padding: 20px;
+        width: 302px;
+        height: 250px;
+        
+        align-items: end;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &:active .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+        transform: rotate(-45deg);
+    }
+
+    &:hover .contact_arrow {
+        background: ${(props) => props.theme.colors.mainText};
+    }
+
+    &:hover path {
+            fill: ${(props) => props.theme.colors.white}
+    }
+
+    &:active path {
+            fill: ${(props) => props.theme.colors.accent}
+    }
+`;
+
 export const AuctionContainer = styled.a`
     position: relative;
 
@@ -244,10 +290,14 @@ export const ServicesTitle = styled.div`
     font-family: "Jura", sans-serif;
     text-transform: uppercase;
     font-weight: ${(props) => props.theme.fontWeights.bold};
-    font-size: ${(props) => props.theme.fontSizesDesktop.s};
+    font-size: ${(props) => props.theme.fontSizesMobile.s};
     line-height: ${(props) => props.theme.lineHeights.one};
     color: ${(props) => props.theme.colors.titleText};
 
+    @media (${(props) => props.theme.media.tablet}) {
+        width: 168px;
+       font-size: ${(props) => props.theme.fontSizesDesktop.xmm};
+    }
 `;
 
 export const PrimaryTitle = styled.div`
@@ -259,6 +309,10 @@ export const PrimaryTitle = styled.div`
     line-height: ${(props) => props.theme.lineHeights.one};
     color: ${(props) => props.theme.colors.mainText};
 
+    @media (${(props) => props.theme.media.tablet}) {
+        width: 179px;
+       font-size: ${(props) => props.theme.fontSizesDesktop.xmm};
+    }
 `;
 
 export const AuctionTitle = styled.div`

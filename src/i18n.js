@@ -32,7 +32,11 @@ i18n
             text:"find your",
             span: "perfect",
             textnext: "car",
-            spannext: "at the best deal"
+            spannext: "at the best deal",
+            servicestitle: "Services & Price list",
+            cataloguetitle: "Car catalogue",
+            faq: "FAQ",
+            contacttitle: "Contact us"
           },
           modal: {
             greetings: "DEAR USER!",
@@ -72,7 +76,11 @@ i18n
             text:"знайди свій",
             span: "ідеальний",
             textnext: "автомобіль",
-            spannext: "за найкращою ціною"
+            spannext: "за найкращою ціною",
+            servicestitle: "Послуги та прайс лист",
+            cataloguetitle: "Каталог автомобілів",
+            faq: "FAQ",
+            contacttitle: "Зв'яжіться з нами"
           },
           modal: {
             greetings: "ШАНОВНИЙ КОРИСТУВАЧ!",
@@ -112,7 +120,11 @@ i18n
             text:"найдите свой",
             span: "идеальный",
             textnext: "автомобиль",
-            spannext: "по лучшей цене"
+            spannext: "по лучшей цене",
+            servicestitle: "Услуги и прайс-лист",
+            cataloguetitle: "Каталог автомобилей",
+            faq: "Часто задаваемые вопросы",
+            contacttitle: "Связаться с нами"
           },
           modal: {
             greetings: "ДОРОГОЙ ПОЛЬЗОВАТЕЛЬ!",
@@ -152,7 +164,11 @@ i18n
             text:"Finden Sie Ihr",
             span: "perfektes",
             textnext: "Auto",
-            spannext: "zum besten Preis"
+            spannext: "zum besten Preis",
+            servicestitle: "Leistungen & Preisliste",
+            cataloguetitle: "Autokatalog",
+            faq: "Häufig gestellte Fragen",
+            contacttitle: "Kontaktieren Sie uns"
           },
           modal: {
             greetings: "LIEBER NUTZER!",
@@ -192,7 +208,11 @@ i18n
             text:"vind uw",
             span: "perfecte",
             textnext: "auto",
-            spannext: "tegen de beste deal"
+            spannext: "tegen de beste deal",
+            servicestitle: "Diensten & Prijslijst",
+            cataloguetitle: "Auto catalogus",
+            faq: "Veelgestelde vragen",
+            contacttitle: "Neem contact met ons op"
           },
           modal: {
             greetings: "BESTE GEBRUIKER!",

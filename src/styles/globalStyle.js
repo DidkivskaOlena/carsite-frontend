@@ -40,6 +40,9 @@ body {
 
 }
 
+body, .hidden {
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+
 ul, ol{
   margin: 0;
   padding: 0;
@@ -76,6 +79,31 @@ img {
   width: 100%;
   height: auto;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+};
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+};
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+};
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;};
 
 // .Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
 // .Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
