@@ -62,6 +62,7 @@ export const theme = {
 
   lineHeights: {
     one: 1,
+    oneone: 1.1,
     two: 1.2,
     three: 1.3,
     four: 1.4,

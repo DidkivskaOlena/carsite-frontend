@@ -1,10 +1,14 @@
 import { CardItem } from "../CarItem/CarItem";
+import { ContainerArr, TitleArr } from "./ArrivalsStyled";
+import CarSlider from "./CarSlider";
+import { cars } from "../../../public/cars";
 
 const Arrivals = () => {
   return (
-    <>
-        <CardItem></CardItem>
-    </>
+    <ContainerArr>
+        <TitleArr>New Arrivals</TitleArr>
+        <CarSlider cars={cars}></CarSlider>
+    </ContainerArr>
   );
 }
 

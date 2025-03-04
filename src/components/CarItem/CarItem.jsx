@@ -14,15 +14,14 @@ export function CardItem({ data }) {
         <CardMedia
         component="img"
         height="140"
-        image={data.primary_photo_url}
       />
       <CardContent>
-        <NavLink to={`/catalogue/${data.id}`}>
+        {/* <NavLink to={`/catalogue/${data.id}`}>
          {data.make}
         </NavLink>
         <Typography>Model: {data.model}</Typography>
         <Typography>Price: {data.price}</Typography>
-        <Typography>Year: {data.year}</Typography>
+        <Typography>Year: {data.year}</Typography> */}
       </CardContent>
       <Button variant="solid" color="danger" size="lg">
           Add to favorites
