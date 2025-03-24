@@ -1,48 +1,68 @@
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import { Navigation, Pagination } from 'swiper/modules';
-import { CarCard, SwiperContainer } from './ArrivalsStyled';
+import styled from 'styled-components';
+import { About, ArrowButton, Description, DescriptionComponent, Details, FirstIndicator, MainImage, SecondIndicator, Slide, SliderContainer, SlidesWrapper, ViewPortContainer } from './ArrivalsStyled';
 
-const CarSlider = ({cars}) => {
+const Slider = ({ slides }) => {
     const [activeIndex, setActiveIndex] = useState(1);
-  
-    const handleSlideChange = (swiper) => {
-      setActiveIndex(swiper.activeIndex);
+
+    const handlePrev = () => {
+        setActiveIndex((prevIndex) =>
+            prevIndex > 0 ? prevIndex - 1 : slides.length - 1
+        );
     };
-  
+
+    const handleNext = () => {
+        setActiveIndex((prevIndex) =>
+            prevIndex < slides.length - 1 ? prevIndex + 1 : 0
+        );
+    };
+
     return (
-      <SwiperContainer>
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={3}
-          centeredSlides={true}
-          navigation
-          pagination={{ clickable: true }}
-          onSlideChange={handleSlideChange}
-          modules={[Navigation, Pagination]}
-        >
-          {cars.map((car, index) => (
-            <SwiperSlide key={index}>
-              <CarCard className={activeIndex === index ? 'active' : ''}>
-                <div><img src={car.image} alt={car.model} /></div>
-                <h3>{car.model}</h3>
-                {activeIndex === index && (
-                  <div className="car-details">
-                    <p>{car.description}</p>
-                    <div className="car-photos">
-                      {car.additionalPhotos.map((photo, i) => (
-                        <img key={i} src={photo} alt={`Additional photo ${i}`} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </CarCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </SwiperContainer>
+        <SliderContainer>
+            <ArrowButton onClick={handlePrev}>◀</ArrowButton>
+            <ViewPortContainer>
+              <SlidesWrapper activeIndex={activeIndex}>
+                  {slides.map((slide, index) => (
+                      <Slide key={index} isActive={activeIndex === index}>
+                          <MainImage
+                                  src={slide.image}
+                                  alt={`Slide ${index}`}
+                                  isActive={activeIndex === index}
+                              />
+                          {activeIndex === index && (
+                              <Details>
+                                  {slide.additionalPhotos.map((photo, i) => (
+                                      <img key={i} src={photo} alt={`Additional photo ${i}`} />
+                                  ))}
+                              </Details>
+                          )}
+                          <Description isActive={activeIndex === index}>
+                                <h3>{slide.model}</h3>
+                                <DescriptionComponent>
+                                  <div className="indicator">
+                                      <h4>Price incl. 21% VAT</h4>
+                                      <FirstIndicator>{slide.pricevat} €</FirstIndicator>
+                                      <SecondIndicator>{slide.pricevatsale} €</SecondIndicator>
+                                  </div>
+                                  <div className="indicator">
+                                      <h4>Net price excl. VAT</h4>
+                                      <FirstIndicator>{slide.netprice} €</FirstIndicator>
+                                      <SecondIndicator>{slide.netprice} €</SecondIndicator>
+                                  </div>
+                                  <div className="indicator">
+                                      <h4>Monthly financing from</h4>
+                                      <SecondIndicator>{slide.monthlyfinancing} €</SecondIndicator>
+                                  </div>
+                                </DescriptionComponent>
+                                <About>{slide.release} - {slide.gearbox} - {slide.mileage} km</About>
+                            </Description>
+                      </Slide>
+                  ))}
+              </SlidesWrapper>
+            </ViewPortContainer>
+            <ArrowButton onClick={handleNext}>▶</ArrowButton>
+        </SliderContainer>
     );
-  };
-  
-  export default CarSlider
+};
+
+export default Slider;

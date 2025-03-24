@@ -4,7 +4,8 @@ import Hero from "../../components/Hero/Hero";
 const Home = () => {
     return <>
     <Hero/>
-    <Arrivals></Arrivals></>
+    <Arrivals></Arrivals>
+    </>
 }
 
 export default Home

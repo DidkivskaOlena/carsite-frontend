@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     white: "rgba(255, 255, 255, 1)",
+    descriptionComponent: "rgba(232, 232, 232, 1)",
     mainText: "rgba(11, 7, 7, 1)",
     mainTextTransp: "rgba(11, 7, 7, 0.8)",
     titleText: "rgba(245, 245, 245, 1)",
@@ -28,6 +29,7 @@ export const theme = {
   },
 
   fontSizesMobile: {
+    xxs:"12px",
     xs: "14px",
     s: "16px",
     xxm: "18px",
@@ -41,6 +43,7 @@ export const theme = {
   },
 
   fontSizesDesktop: {
+    xxs: "10px",
     xs: "14px",
     s: "16px",
     xxm: "18px",

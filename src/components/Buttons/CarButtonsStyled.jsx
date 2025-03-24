@@ -3,6 +3,7 @@ import {} from "../../styles/theme";
 
 export const PrimaryContainer = styled.a`
     background:${(props) => props.theme.colors.mainText};;
+    margin: 0 auto;
     border-radius: 60px;
     width: 182px;
     height: 52px;
