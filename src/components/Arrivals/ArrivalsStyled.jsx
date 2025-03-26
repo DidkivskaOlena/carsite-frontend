@@ -1,6 +1,24 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from 'styled-components';
 import {} from "../../styles/theme";
 import 'swiper/swiper-bundle.css';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 export const ContainerArr = styled.div`
     width: 1400px;
@@ -42,8 +60,9 @@ export const SlidesWrapper = styled.div`
     display: flex;
     gap: 10px;
     transform: translateX(${(props) => -props.activeIndex * (407 + 10) + 417}px);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 1.2s ease-in-out;
     position: relative;
+    
 `;
 
 
@@ -57,6 +76,15 @@ export const Slide = styled.div`
     justify-content: center;
     text-align: center;
     border-radius: 10px;
+    position: relative;
+
+`;
+
+export const MainImageContainer = styled.div`
+    width: 407px;
+    height: 220px;
+    transform: translateY(${(props) => (props.isActive ? '0px' : '70px')});
+    transition: border-radius 0.5s ease-in-out, transform 0.8s ease-in-out; /* Плавна зміна радіуса */
 
 `;
 
@@ -64,20 +92,44 @@ export const MainImage = styled.img`
     width: 407px;
     height: 220px;
     border-radius: ${(props) => (props.isActive ? '10px' : '10px 10px 0 0')}; /* Динамічний бордер */
-    transition: border-radius 0.3s ease-in-out; /* Плавна зміна радіуса */
+
 `;
 
-export const Details = styled.div`
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+export const CarId = styled.p`
+    min-width: 78px;
+    height: 31px;
+    border-radius: 30px;
+    padding: 5px 12px;
+    background: ${(props) => props.theme.colors.componentBackground};
+    
+    font-family: ${(props) => props.theme.font.fontFamily};
+    font-weight: ${(props) => props.theme.fontWeights.semiBold};
+    font-size: ${(props) => props.theme.fontSizesDesktop.xs};
+  
+    color:${(props) => props.theme.colors.white};
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+`
 
-    img {
-        border-radius: 10px;
-        width: 198px;
-        height: 120px;
-    }
+export const Details = styled.div`
+ opacity: ${(props) => (props.isActive ? '1' : '0')};
+  pointer-events: ${(props) => (props.isActive ? 'auto' : 'none')};
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: ${(props) =>
+    props.isActive
+      ? 'opacity 1.5s ease-in-out'
+      : 'opacity 0.5s ease-in-out'}; /* Задаємо різний час для появи та зникнення */
+
+  img {
+    border-radius: 10px;
+    width: 198px;
+    height: 120px;
+  }
 `;
 
 export const Description = styled.div`
@@ -89,8 +141,8 @@ export const Description = styled.div`
     background: ${(props) => props.theme.colors.background};
 
     text-align: start;
-    
-    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transform: translateY(${(props) => (props.isActive ? '0px' : '-70px')});
+    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out,  transform 0.8s ease-in-out;;
 
     h3 {
           font-family: ${(props) => props.theme.font.fontFamily};
@@ -169,16 +221,7 @@ export const About = styled.p`
 `
 
 export const ArrowButton = styled.button`
-   background: none;
-    border: none;
-    font-size: 2rem;
     cursor: pointer;
-    margin: 0 20px;
     z-index: 10;
-    color: #000;
-
-    &:hover {
-        color: #555;
-    }
 `;
 

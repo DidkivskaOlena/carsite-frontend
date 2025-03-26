@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { About, ArrowButton, Description, DescriptionComponent, Details, FirstIndicator, MainImage, SecondIndicator, Slide, SliderContainer, SlidesWrapper, ViewPortContainer } from './ArrivalsStyled';
+import { About, ArrowButton, CarId, Description, DescriptionComponent, Details, FirstIndicator, MainImage, MainImageContainer, SecondIndicator, Slide, SliderContainer, SlidesWrapper, ViewPortContainer } from './ArrivalsStyled';
 
 const Slider = ({ slides }) => {
     const [activeIndex, setActiveIndex] = useState(1);
@@ -19,23 +18,27 @@ const Slider = ({ slides }) => {
 
     return (
         <SliderContainer>
-            <ArrowButton onClick={handlePrev}>◀</ArrowButton>
+            <ArrowButton onClick={handlePrev}>
+                <img src="/arrowleft.png" alt="Previous" />
+            </ArrowButton>
             <ViewPortContainer>
               <SlidesWrapper activeIndex={activeIndex}>
                   {slides.map((slide, index) => (
                       <Slide key={index} isActive={activeIndex === index}>
-                          <MainImage
-                                  src={slide.image}
-                                  alt={`Slide ${index}`}
-                                  isActive={activeIndex === index}
-                              />
-                          {activeIndex === index && (
-                              <Details>
-                                  {slide.additionalPhotos.map((photo, i) => (
-                                      <img key={i} src={photo} alt={`Additional photo ${i}`} />
-                                  ))}
-                              </Details>
-                          )}
+                            <MainImageContainer isActive={activeIndex === index}>
+                                <CarId>ID: {slide.number}</CarId>
+                                <MainImage
+                                        src={slide.image}
+                                        alt={`Slide ${index}`}
+                                        isActive={activeIndex === index}
+                                    />
+                            </MainImageContainer>
+                            
+                              <Details isActive={activeIndex === index}>
+                              {slide.additionalPhotos.map((photo, i) => (
+                                <img key={i} src={photo} alt={`Additional photo ${i}`} />
+                              ))}
+                            </Details>
                           <Description isActive={activeIndex === index}>
                                 <h3>{slide.model}</h3>
                                 <DescriptionComponent>
@@ -60,7 +63,9 @@ const Slider = ({ slides }) => {
                   ))}
               </SlidesWrapper>
             </ViewPortContainer>
-            <ArrowButton onClick={handleNext}>▶</ArrowButton>
+            <ArrowButton onClick={handleNext}>
+             <img src="/arrowright.png" alt="Previous" />
+            </ArrowButton>
         </SliderContainer>
     );
 };
