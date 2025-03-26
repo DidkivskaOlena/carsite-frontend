@@ -10,7 +10,6 @@ import { SharedLayout } from "./components/SharedLayout";
 import AdminPage from "./pages/Admin/AdminPage";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
-import { useState } from 'react';
 
 const Home = lazy(() => import("./pages/Home/Home"))
 const About = lazy(() => import("./pages/About/About"))

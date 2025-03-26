@@ -4,9 +4,8 @@ import {Arrow, AuctionArrow, AuctionContainer, AuctionTitle, CatalogueContainer,
 import { useTheme } from 'styled-components'
 
 // eslint-disable-next-line react/prop-types
-export const PrimaryButton = ({title}) => {
+export const PrimaryButton = ({title, isDisabled}) => {
     const theme = useTheme();
-    const isDisabled = false;
 
   return (
     <PrimaryContainer 
@@ -22,9 +21,8 @@ export const PrimaryButton = ({title}) => {
   );
 };
 
-export const SecondaryButton = ({title}) => {
+export const SecondaryButton = ({title, isDisabled}) => {
     const theme = useTheme();
-    const isDisabled = true;
 
   return (
     <SecondaryContainer 
