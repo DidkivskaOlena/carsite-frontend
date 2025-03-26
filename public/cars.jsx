@@ -1,12 +1,12 @@
 export const cars = [
     {
-      image: '/public/image2inactive1.png',
+      image: '/image2inactive1.png',
       model: 'ID 3779 Volkswagen Polo',
       number: '3779',
       description: 'Description for model 1',
       additionalPhotos: [
-        '/public/image2inactive1.png',
-        '/public/image2inactive1.png',
+        '/image2inactive1.png',
+        '/image2inactive1.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
@@ -24,13 +24,13 @@ export const cars = [
       photo_urls:["http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/lovers_zabe3r.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/valentinesday_qvfrpm.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/christmas_g4sejb.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/birthday_df8vmf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910573/cars/background_anaubf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/contact_qfzoue.png"],"price":{"$numberInt":"1000"},"primary_photo_url":"http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","year":null,"createdAt":{"$date":{"$numberLong":"1705910574704"}},"updatedAt":{"$date":{"$numberLong":"1705910574704"}}
     },
     {
-      image: '/public/image1.png',
+      image: '/image1.png',
       model: 'ID 3780 Volkswagen Polo',
       number: '3780',
       description: 'Description for model 2',
       additionalPhotos: [
-        '/public/image2.png',
-        '/public/image3.png',
+        '/image2.png',
+        '/image3.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
@@ -48,13 +48,13 @@ export const cars = [
       photo_urls:["http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/lovers_zabe3r.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/valentinesday_qvfrpm.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/christmas_g4sejb.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/birthday_df8vmf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910573/cars/background_anaubf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/contact_qfzoue.png"],"price":{"$numberInt":"1000"},"primary_photo_url":"http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","year":null,"createdAt":{"$date":{"$numberLong":"1705910574704"}},"updatedAt":{"$date":{"$numberLong":"1705910574704"}}
     },
     {
-      image: '/public/image2inactive2.png',
+      image: '/image2inactive2.png',
       model: 'ID 3781 Volkswagen Polo',
       number: '3781',
       description: 'Description for model 3',
       additionalPhotos: [
-        '/public/image2inactive2.png',
-        '/public/image2inactive2.png',
+        '/image2inactive2.png',
+        '/image2inactive2.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
@@ -72,13 +72,13 @@ export const cars = [
       photo_urls:["http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/lovers_zabe3r.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/valentinesday_qvfrpm.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/christmas_g4sejb.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/birthday_df8vmf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910573/cars/background_anaubf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/contact_qfzoue.png"],"price":{"$numberInt":"1000"},"primary_photo_url":"http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","year":null,"createdAt":{"$date":{"$numberLong":"1705910574704"}},"updatedAt":{"$date":{"$numberLong":"1705910574704"}}
     },
     {
-      image: '/public/image2inactive1.png',
+      image: '/image2inactive1.png',
       model: 'ID 3779 Volkswagen Polo',
       number: '3779',
       description: 'Description for model 1',
       additionalPhotos: [
-        '/public/image2inactive1.png',
-        '/public/image2inactive1.png',
+        '/image2inactive1.png',
+        '/image2inactive1.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
@@ -96,13 +96,13 @@ export const cars = [
       photo_urls:["http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/lovers_zabe3r.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/valentinesday_qvfrpm.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/christmas_g4sejb.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/birthday_df8vmf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910573/cars/background_anaubf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/contact_qfzoue.png"],"price":{"$numberInt":"1000"},"primary_photo_url":"http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","year":null,"createdAt":{"$date":{"$numberLong":"1705910574704"}},"updatedAt":{"$date":{"$numberLong":"1705910574704"}}
     },
     {
-      image: '/public/image1.png',
+      image: '/image1.png',
       model: 'ID 3779 Volkswagen Polo',
       number: '3779',
       description: 'Description for model 2',
       additionalPhotos: [
-        '/public/image2.png',
-        '/public/image3.png',
+        '/image2.png',
+        '/image3.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
@@ -120,13 +120,13 @@ export const cars = [
       photo_urls:["http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/lovers_zabe3r.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/valentinesday_qvfrpm.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910572/cars/christmas_g4sejb.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/birthday_df8vmf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910573/cars/background_anaubf.jpg","http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/contact_qfzoue.png"],"price":{"$numberInt":"1000"},"primary_photo_url":"http://res.cloudinary.com/doinkhfhu/image/upload/v1705910571/cars/wedding_gylrez.jpg","year":null,"createdAt":{"$date":{"$numberLong":"1705910574704"}},"updatedAt":{"$date":{"$numberLong":"1705910574704"}}
     },
     {
-      image: '/public/image2inactive2.png',
+      image: '/image2inactive2.png',
       model: 'ID 3779 Volkswagen Polo',
       number: '3779',
       description: 'Description for model 3',
       additionalPhotos: [
-        '/public/image2inactive2.png',
-        '/public/image2inactive2.png',
+        '/image2inactive2.png',
+        '/image2inactive2.png',
       ],
       pricevat: "15.980,00",
       pricevatsale: "13.583,00",
