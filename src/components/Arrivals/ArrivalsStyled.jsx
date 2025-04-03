@@ -27,7 +27,7 @@ export const ContainerArr = styled.div`
     text-align: center;
 `
 
-export const TitleArr = styled.p`
+export const TitleArr = styled.h2` 
   font-family: ${(props) => props.theme.font.secondFamily};
   font-weight: ${(props) => props.theme.fontWeights.medium};
   font-size: ${(props) => props.theme.fontSizesDesktop.l};
@@ -223,5 +223,11 @@ export const About = styled.p`
 export const ArrowButton = styled.button`
     cursor: pointer;
     z-index: 10;
+    outline: none; /* Забирає рамку */
+    background-color: transparent; /* Забирає фон */
+
+    &:active {
+      background-color: transparent;
+    }
 `;
 
