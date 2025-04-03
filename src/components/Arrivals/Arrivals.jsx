@@ -1,6 +1,5 @@
 import { CardItem } from "../CarItem/CarItem";
 import { ContainerArr, TitleArr } from "./ArrivalsStyled";
-import CarSlider from "./CarSlider";
 import { cars } from "../../../public/cars";
 import { PrimaryButton} from "../Buttons/CarButtons";
 import Slider from "./CarSlider";

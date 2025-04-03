@@ -2,16 +2,16 @@ import styled from "styled-components";
 import {} from "../../styles/theme";
 
 export const PrimaryContainer = styled.a`
-    background:${(props) => props.theme.colors.mainText};;
-    margin: 0 auto;
+    background:${(props) => props.theme.colors.mainText};
+    padding: 19px 8px 19px 23px;
     border-radius: 60px;
-    width: 182px;
+    width: auto;
     height: 52px;
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-    padding: 19px 8px 19px 23px;
+    white-space: nowrap;
     text-decoration: none;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
 
@@ -32,13 +32,13 @@ export const PrimaryContainer = styled.a`
 export const SecondaryContainer = styled.a`
     border: ${(props) => (props.disabled ? '1.50px solid #d9d9d9' : '1.50px solid #fff')};
     border-radius: 60px;
-    width: 182px;
+    width: auto;
     height: 52px;
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
     padding: 19px 23px;
     text-decoration: none;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
 
@@ -279,9 +279,6 @@ export const Title = styled.div`
     font-size: ${(props) => props.theme.fontSizesDesktop.xs};
     line-height: ${(props) => props.theme.lineHeights.one};
     color: ${(props) => (props.disabled ? props.theme.colors.imgBackground : props.theme.colors.white)};
-
-    margin-left: auto;
-    margin-right: auto;
 
     transition: color 0.4s;
 `;

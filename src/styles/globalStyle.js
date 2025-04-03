@@ -23,6 +23,7 @@ body {
   background-color: ${(p) => p.theme.colors.background};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
   
   &::-webkit-scrollbar {
     width: 0px;

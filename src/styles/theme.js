@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     white: "rgba(255, 255, 255, 1)",
+    whiteTransp: "rgba(255, 255, 255, 0.8)",
     descriptionComponent: "rgba(232, 232, 232, 1)",
     mainText: "rgba(11, 7, 7, 1)",
     mainTextTransp: "rgba(11, 7, 7, 0.8)",
