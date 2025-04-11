@@ -30,6 +30,7 @@ export const PrimaryContainer = styled.a`
 `;
 
 export const SecondaryContainer = styled.a`
+    margin: ${(props) => props.margin};
     border: ${(props) => (props.disabled ? '1.50px solid #d9d9d9' : '1.50px solid #fff')};
     border-radius: 60px;
     width: auto;

@@ -21,7 +21,7 @@ export const PrimaryButton = ({title, isDisabled}) => {
   );
 };
 
-export const SecondaryButton = ({title, isDisabled}) => {
+export const SecondaryButton = ({title, isDisabled, margin}) => {
     const theme = useTheme();
 
   return (
@@ -29,6 +29,7 @@ export const SecondaryButton = ({title, isDisabled}) => {
         href={isDisabled ? null : "#"}
         onClick={isDisabled ? (e) => e.preventDefault() : null}
         disabled={isDisabled}
+        margin={margin}
         theme={theme}>
       <Title className="title" disabled={isDisabled}>{title}</Title>
     </SecondaryContainer>

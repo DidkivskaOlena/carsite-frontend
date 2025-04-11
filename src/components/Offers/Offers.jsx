@@ -31,7 +31,7 @@ const Offers = () => {
           <SlideContent>
             <TitleItemOff>{slide.h3}</TitleItemOff>
             <CommentItemOff>{slide.text}</CommentItemOff>
-            <SecondaryButton title={"View More"}></SecondaryButton>
+            <SecondaryButton title={"View More"} margin={"80px 0 0 100px"} isDisabled = {false}></SecondaryButton>
           </SlideContent>
           <Image src={slide.image} alt={`Слайд ${index + 1}`} />
         </Slide>

@@ -50,6 +50,7 @@ export const TitleOff = styled.h2`
 export const TitleItemOff = styled.h3` 
   margin-top: 195px;
   margin-left: 100px;
+  width: 500px;
 
   font-family: ${(props) => props.theme.font.fontFamily};
   font-weight: ${(props) => props.theme.fontWeights.bold};
@@ -63,6 +64,8 @@ export const TitleItemOff = styled.h3`
 export const CommentItemOff = styled.p` 
   margin-top: 10px;
   margin-left: 100px;
+  width: 455px;   
+  margin-right: 146px;
 
   font-family: ${(props) => props.theme.font.fontFamily};
   font-weight: ${(props) => props.theme.fontWeights.normal};
@@ -75,7 +78,6 @@ export const CommentItemOff = styled.p`
 
 
 export const SlideContent = styled.div`
-  
 `;
 
 export const Image = styled.img`
